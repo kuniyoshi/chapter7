@@ -1,5 +1,5 @@
-#ifndef BAKUDAN_FILE_H_
-#define BAKUDAN_FILE_H_
+#ifndef NIMOTSUKUN_FILE_INCLUDED
+#define NIMOTSUKUN_FILE_INCLUDED
 
 class File
 {

@@ -2,7 +2,6 @@
 
 Point::Point() {}
 Point::Point(int x, int y) : x_(x), y_(y) { }
-
 bool Point::operator==(const Point& other) const
 {
 	return x_ == other.x() && y_ == other.y();
@@ -10,17 +9,6 @@ bool Point::operator==(const Point& other) const
 bool Point::operator!=(const Point& other) const
 {
 	return x_ != other.x() || y_ != other.y();
-}
-Point& Point::operator+(const Point& operand)
-{
-	x_ += operand.x_;
-	y_ += operand.y_;
-	return *this;
-}
-void Point::operator+=(const Point& operand)
-{
-	x_ += operand.x_;
-	y_ += operand.y_;
 }
 
 int Point::x() const { return x_; }
