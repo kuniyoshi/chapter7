@@ -20,12 +20,14 @@ Game::Game()
 : play_mode_(Constants::PlayMode1P), state_(0), scene_(0)
 {
 	set_scene(new Scene::Game::Load(play_mode_));
+	state_ = new State();
 }
 
 Game::Game(Constants::PlayMode play_mode)
 : play_mode_(play_mode), state_(0), scene_(0)
 {
 	set_scene(new Scene::Game::Load(play_mode_));
+	state_ = new State();
 }
 
 Game::~Game()
