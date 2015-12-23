@@ -31,5 +31,5 @@ void Size::set_width_height(int width, int height)
 }
 bool Size::is_iterator_in(const Iterator::Image& iterator) const
 {
-	return is_index_in(iterator.width(), iterator.height());
+	return is_index_in(iterator.width() - 1, iterator.height() - 1);
 }
