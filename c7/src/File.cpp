@@ -1,9 +1,10 @@
-#include <fstream>
 #include "File.h"
+#include <fstream>
 
 using namespace std;
 
-File::File(const char* filename) : data_(0), size_(0)
+File::File(const char* filename)
+: data_(0), size_(0)
 {
 	ifstream in(filename, ifstream::binary);
 
