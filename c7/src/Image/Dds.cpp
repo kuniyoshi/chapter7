@@ -12,6 +12,7 @@ namespace Image
 Dds::Dds(const File& image_file)
 : size_(0), data_(0)
 {
+	STRONG_ASSERT(image_file.data());
 	Size* size_candidate = new Size(0, 0);
 	read_dds_size(image_file, size_candidate);
 	size_ = size_candidate;
@@ -24,7 +25,7 @@ Dds::Dds(const File& image_file)
 Dds::~Dds()
 {
 	SAFE_DELETE_ARRAY(data_);
-	SAFE_DELETE_ARRAY(size_);
+	SAFE_DELETE(size_);
 }
 
 const unsigned Dds::operator[](int index) const
@@ -33,10 +34,10 @@ const unsigned Dds::operator[](int index) const
 	return data_[index];
 }
 
-void Dds::copy(const Point& point, const Size& size, unsigned* vram) const
+void Dds::copy(const Point& point, const Size& size, unsigned** vram) const
 {
 	Point top_left = Point(0, 0);
-	Point bottom_right = Point(size_->width(), size_->height());
+	Point bottom_right = Point(size_->width() - 1, size_->height() - 1);
 	Iterator::Image source_iterator(top_left, bottom_right, *size_);
 	Iterator::Image destination_iterator(top_left + point, bottom_right + point, size);
 
@@ -44,18 +45,21 @@ void Dds::copy(const Point& point, const Size& size, unsigned* vram) const
 	{
 		if (size.is_iterator_in(destination_iterator))
 		{
-			vram[destination_iterator] = data_[source_iterator];
+			(*vram)[destination_iterator] = data_[source_iterator];
 		}
 
 		++source_iterator;
 		++destination_iterator;
 	}
+
+	int lasts = source_iterator;
+	int lastd = destination_iterator;
 }
 
-void Dds::copy_alpha_blend(const Point& point, const Size& size, unsigned* vram) const
+void Dds::copy_alpha_blend(const Point& point, const Size& size, unsigned** vram) const
 {
 	Point top_left = Point(0, 0);
-	Point bottom_right = Point(size_->width(), size_->height());
+	Point bottom_right = Point(size_->width() - 1, size_->height() - 1);
 	Iterator::Image source_iterator(top_left, bottom_right, *size_);
 	Iterator::Image destination_iterator(top_left + point, bottom_right + point, size);
 
@@ -63,8 +67,8 @@ void Dds::copy_alpha_blend(const Point& point, const Size& size, unsigned* vram)
 	{
 		if (size.is_iterator_in(destination_iterator))
 		{
-			vram[destination_iterator] = alpha_blend(	data_[source_iterator],
-														vram[destination_iterator]);
+			(*vram)[destination_iterator] = alpha_blend(	data_[source_iterator],
+															(*vram)[destination_iterator]);
 		}
 
 		++source_iterator;
