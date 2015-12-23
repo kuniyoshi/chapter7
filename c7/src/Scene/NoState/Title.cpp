@@ -52,7 +52,7 @@ void Title::update(	Controller::NoState::SceneName* next_scene_name,
 
 	f.drawDebugString(0, 0, "[TITLE]", 0xffffffff);
 	f.drawDebugString(1, 1, "1P Mode", 0xffffffff);
-	f.drawDebugString(1, 2, "1P Mode", 0xffffffff);
+	f.drawDebugString(1, 2, "2P Mode", 0xffffffff);
 	f.drawDebugString(0, looped_index_ + 1, ">", 0xffffffff);
 }
 
