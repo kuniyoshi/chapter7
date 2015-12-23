@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BAKUDAN_ARRAY2D_H_
+#define BAKUDAN_ARRAY2D_H_
 
 template< class T >
 class Array2D {
@@ -14,3 +15,5 @@ public:
 	T& operator()(int index0, int index1);
 	const T& operator()(int index0, int index1) const;
 };
+
+#endif
