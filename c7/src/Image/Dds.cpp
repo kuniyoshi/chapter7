@@ -34,7 +34,7 @@ const unsigned Dds::operator[](int index) const
 	return data_[index];
 }
 
-void Dds::copy(const Point& point, const Size& size, unsigned** vram) const
+void Dds::copy(const Point& point, const Size& size, unsigned* vram) const
 {
 	Point top_left = Point(0, 0);
 	Point bottom_right = Point(size_->width() - 1, size_->height() - 1);
@@ -45,7 +45,7 @@ void Dds::copy(const Point& point, const Size& size, unsigned** vram) const
 	{
 		if (size.is_iterator_in(destination_iterator))
 		{
-			(*vram)[destination_iterator] = data_[source_iterator];
+			vram[destination_iterator] = data_[source_iterator];
 		}
 
 		++source_iterator;
@@ -56,7 +56,7 @@ void Dds::copy(const Point& point, const Size& size, unsigned** vram) const
 	int lastd = destination_iterator;
 }
 
-void Dds::copy_alpha_blend(const Point& point, const Size& size, unsigned** vram) const
+void Dds::copy_alpha_blend(const Point& point, const Size& size, unsigned* vram) const
 {
 	Point top_left = Point(0, 0);
 	Point bottom_right = Point(size_->width() - 1, size_->height() - 1);
@@ -67,8 +67,8 @@ void Dds::copy_alpha_blend(const Point& point, const Size& size, unsigned** vram
 	{
 		if (size.is_iterator_in(destination_iterator))
 		{
-			(*vram)[destination_iterator] = alpha_blend(	data_[source_iterator],
-															(*vram)[destination_iterator]);
+			vram[destination_iterator] = alpha_blend(	data_[source_iterator],
+														vram[destination_iterator]);
 		}
 
 		++source_iterator;
