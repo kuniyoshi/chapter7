@@ -14,6 +14,7 @@ private:
 
 public:
 	Loop(int min, int max);
+	Loop(int index, int min, int max);
 	~Loop();
 	operator int() const;
 	Loop& operator++();

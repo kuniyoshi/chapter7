@@ -7,6 +7,10 @@ Loop::Loop(int min, int max)
 : index_(min), min_(min), max_(max), did_loop_(false)
 {}
 
+Loop::Loop(int index, int min, int max)
+: index_(index), min_(min), max_(max), did_loop_(false)
+{}
+
 Loop::~Loop() {}
 
 Loop::operator int() const { return index_; }
