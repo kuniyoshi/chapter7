@@ -11,11 +11,9 @@ bool Point::operator!=(const Point& other) const
 {
 	return x_ != other.x() || y_ != other.y();
 }
-Point& Point::operator+(const Point& operand)
+Point Point::operator+(const Point& operand) const
 {
-	x_ += operand.x_;
-	y_ += operand.y_;
-	return *this;
+	return Point(x_ + operand.x_, y_ + operand.y_);
 }
 void Point::operator+=(const Point& operand)
 {
