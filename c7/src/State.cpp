@@ -11,7 +11,7 @@ State::State()
 // : object_image_(0), map_(0), objects_(0)
 {
 	// load object_image_ later
-	map_ = new Game::Map(17, 17);
+	map_ = new Game::Map(20, 15);
 }
 
 State::~State()
