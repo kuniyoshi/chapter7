@@ -1,3 +1,10 @@
+/*
+Commands
+T: Terminate the app
+G: Clear, or Win the game
+B: Faill, or Lose the game
+*/
+
 #include "GameLib/Framework.h"
 #include "App.h"
 
