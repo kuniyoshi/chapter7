@@ -20,9 +20,9 @@ void Map::load()
 	{
 		for (int x = 0; x < width_; ++x)
 		{
-			cells_(x, y) = (y == 0 || x == 0)
+			cells_(x, y) = (y == 0 || y == height_ - 1 || x == 0 || x == width_ - 1)
 				? State::OBJECT_IMAGE_BLOCK
-				: ((y % 2) && x == y)
+				: (!(y % 2) && !(x % 2))
 				? State::OBJECT_IMAGE_BLOCK
 				: State::OBJECT_IMAGE_WALL;
 		}
