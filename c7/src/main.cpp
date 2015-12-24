@@ -15,7 +15,7 @@ namespace GameLib
 
 		gApp->update();
 
-		if (isKeyOn('\x1b'))
+		if (isKeyOn('T'))
 		{
 			requestEnd();
 		}
