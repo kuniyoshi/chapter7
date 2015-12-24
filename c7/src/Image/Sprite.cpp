@@ -48,13 +48,15 @@ void Sprite::copy(	int index,
 					unsigned* vram) const
 {
 	Point source_top_left = get_point_from_cell_index(index, *cell_size_, cells_per_column_);
-	Point source_bottom_right = source_top_left + Point(cell_size_->width(), cell_size_->height());
+	Point source_bottom_right
+	= source_top_left + Point(cell_size_->width() - 1, cell_size_->height() - 1);
+	Point destination_bottom_right
+	= Point(cell_size_->width() - 1, cell_size_->height() - 1) + destination_top_left;
 
-	Iterator::Image source_iterator(source_top_left, source_bottom_right, *cell_size_);
+	Iterator::Image source_iterator(source_top_left, source_bottom_right, *size_);
 	Iterator::Image destination_iterator(	destination_top_left,
-											Point(	cell_size_->width(),
-													cell_size_->height()) + destination_top_left,
-											*cell_size_);
+											destination_bottom_right,
+											size);
 
 	while (source_iterator.has_next())
 	{
@@ -74,13 +76,15 @@ void Sprite::copy_alpha_blend(	int index,
 								unsigned* vram) const
 {
 	Point source_top_left = get_point_from_cell_index(index, *cell_size_, cells_per_column_);
-	Point source_bottom_right = source_top_left + Point(cell_size_->width(), cell_size_->height());
+	Point source_bottom_right
+	= source_top_left + Point(cell_size_->width() - 1, cell_size_->height() - 1);
+	Point destination_bottom_right
+	= Point(cell_size_->width() - 1, cell_size_->height() - 1) + destination_top_left;
 
-	Iterator::Image source_iterator(source_top_left, source_bottom_right, *cell_size_);
+	Iterator::Image source_iterator(source_top_left, source_bottom_right, *size_);
 	Iterator::Image destination_iterator(	destination_top_left,
-											Point(	cell_size_->width(),
-													cell_size_->height()) + destination_top_left,
-											*cell_size_);
+											destination_bottom_right,
+											size);
 
 	while (source_iterator.has_next())
 	{
