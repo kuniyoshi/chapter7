@@ -4,6 +4,7 @@
 #include "Scene/Game/Parent.h"
 #include "Controller/Game.h"
 #include "Constants.h"
+#include "Iterator/Loop.h"
 
 class State;
 
@@ -20,6 +21,7 @@ private:
 
 private:
 	Constants::PlayMode play_mode_;
+	Iterator::Loop looped_index_;
 
 public:
 	Pause();
