@@ -4,6 +4,8 @@
 #include "Array2D.h"
 #include "State.h"
 
+class Point;
+
 namespace Image
 {
 
@@ -26,6 +28,8 @@ public:
 	// ~Map();
 	void load();
 	void draw(const Image::Sprite& image) const;
+	bool is_block(int x, int y) const;
+	bool is_block(const Point& point) const;
 };
 
 } // namespace Game

@@ -46,6 +46,7 @@ void Play::update(State* state, Controller::Game::SceneName* next_scene_name)
 	}
 #endif
 
+	state->update();
 	state->draw();
 }
 

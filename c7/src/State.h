@@ -15,7 +15,13 @@ namespace Game
 {
 
 class Map;
-// class Object;
+
+namespace Object
+{
+
+class Player;
+
+} // namespace Object
 
 } // namespace Game
 
@@ -42,12 +48,13 @@ public:
 private:
 	Image::Sprite* object_image_;
 	Game::Map* map_;
-	// Game::Object* objects_;
+	Game::Object::Player* player1p_;
 
 public:
 	State();
 	~State();
 	void load(Constants::PlayMode play_mode);
+	void update();
 	void draw() const;
 };
 

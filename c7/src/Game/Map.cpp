@@ -24,7 +24,7 @@ void Map::load()
 				? State::OBJECT_IMAGE_BLOCK
 				: (!(y % 2) && !(x % 2))
 				? State::OBJECT_IMAGE_BLOCK
-				: State::OBJECT_IMAGE_WALL;
+				: State::OBJECT_IMAGE_FLOOR;
 		}
 	}
 }
@@ -34,19 +34,27 @@ void Map::draw(const Image::Sprite& image) const
 	GameLib::Framework f = GameLib::Framework::instance();
 	Size size(f.width(), f.height());
 	unsigned* vram = f.videoMemory();
-	int width = image.cell_width();
-	int height = image.cell_height();
 
 	for (int y = 0; y < height_; ++y)
 	{
 		for (int x = 0; x < width_; ++x)
 		{
 			image.copy(	cells_(x, y),
-						Point(x * width, y * height),
+						Point(x, y),
 						size,
 						vram);
 		}
 	}
+}
+
+bool Map::is_block(int x, int y) const
+{
+	return cells_(x, y) == State::OBJECT_IMAGE_BLOCK;
+}
+
+bool Map::is_block(const Point& point) const
+{
+	return cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
 }
 
 } // namespace Game
