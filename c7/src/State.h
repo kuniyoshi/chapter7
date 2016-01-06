@@ -56,6 +56,8 @@ public:
 	void load(Constants::PlayMode play_mode);
 	void update();
 	void draw() const;
+	void pause();
+	void resume();
 };
 
 #endif

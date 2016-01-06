@@ -50,6 +50,11 @@ void Pause::update(State* state, Controller::Game::SceneName* next_scene_name)
 	if (f.isKeyTriggered(' '))
 	{
 		*next_scene_name = next_candidates[looped_index_];
+
+		if (next_candidates[looped_index_] == Controller::Game::ScenePlay)
+		{
+			state->resume();
+		}
 	}
 
 	state->draw();

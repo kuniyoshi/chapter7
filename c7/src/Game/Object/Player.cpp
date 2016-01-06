@@ -91,6 +91,22 @@ void Player::draw(const Image::Sprite& image)  const
 							vram);
 }
 
+void Player::pause(unsigned now)
+{
+	if (move_event_)
+	{
+		move_event_->pause(now);
+	}
+}
+
+void Player::resume(unsigned now)
+{
+	if (move_event_)
+	{
+		move_event_->resume(now);
+	}
+}
+
 } // namespace Object
 
 } // namespace Game

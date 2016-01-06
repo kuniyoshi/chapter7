@@ -36,6 +36,8 @@ public:
 	virtual void move_to(const Point& new_point, unsigned now);
 	virtual void tick(unsigned now);
 	virtual void draw(const Image::Sprite& image) const;
+	virtual void pause(unsigned now);
+	virtual void resume(unsigned now);
 };
 
 } // namespace Object

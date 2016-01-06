@@ -32,6 +32,7 @@ void Play::update(State* state, Controller::Game::SceneName* next_scene_name)
 	if (f.isKeyTriggered(' '))
 	{
 		*next_scene_name = Controller::Game::ScenePause;
+		state->pause();
 	}
 #ifndef NDEBUG
 	else if (f.isKeyTriggered('G'))

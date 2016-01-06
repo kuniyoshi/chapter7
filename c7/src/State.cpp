@@ -67,3 +67,13 @@ void State::draw() const
 	map_->draw(*object_image_);
 	player1p_->draw(*object_image_);
 }
+
+void State::pause()
+{
+	player1p_->pause(GameLib::Framework::instance().time());
+}
+
+void State::resume()
+{
+	player1p_->resume(GameLib::Framework::instance().time());
+}
