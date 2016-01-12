@@ -38,8 +38,8 @@ void Play::update(State* state, Controller::Game::SceneName* next_scene_name)
 	else if (f.isKeyTriggered('G'))
 	{
 		*next_scene_name = play_mode_ == Constants::PlayMode1P
-		? Controller::Game::SceneSuccess
-		: Controller::Game::SceneWinLose;
+			? Controller::Game::SceneSuccess
+			: Controller::Game::SceneWinLose;
 	}
 	else if (play_mode_ == Constants::PlayMode1P && f.isKeyTriggered('B'))
 	{
