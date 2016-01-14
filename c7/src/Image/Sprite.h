@@ -1,5 +1,6 @@
 #ifndef BAKUDAN_IMAGE_SPRITE_H_
 #define BAKUDAN_IMAGE_SPRITE_H_
+#include "Rect.h"
 
 class Size;
 class File;
@@ -50,6 +51,7 @@ public:
 							unsigned* vram) const;
 	int cell_width() const;
 	int cell_height() const;
+	void set_inner_area_of(int index, Rect< double >* rect) const;
 };
 
 } // namespace Image

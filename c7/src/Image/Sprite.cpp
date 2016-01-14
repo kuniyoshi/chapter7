@@ -5,6 +5,7 @@
 #include "Image/functions.h"
 #include "Iterator/Image.h"
 #include "Point.h"
+#include "Rect.h"
 #include "Size.h"
 
 namespace Image
@@ -197,5 +198,49 @@ void Sprite::copy_alpha_blend(	int index,
 
 int Sprite::cell_width() const { return cell_size_->width(); }
 int Sprite::cell_height() const { return cell_size_->height(); }
+
+void Sprite::set_inner_area_of(int index, Rect< double >* rect) const
+{
+	Point top_left = get_point_from_cell_index(index, *cell_size_, cells_per_column_);
+	Point bottom_right(top_left, cell_size_->width() - 1, cell_size_->height() - 1);
+	Iterator::Image iterator(top_left, bottom_right, *size_);
+
+	int min_x = iterator.width();
+	int max_x = 0;
+	int min_y = iterator.height();
+	int max_y = 0;
+
+	while (iterator.has_next())
+	{
+		unsigned alpha = data_[iterator] & 0xff000000;
+
+		if (alpha > 127)
+		{
+			if (iterator.unbiased_x() > max_x)
+			{
+				max_x = iterator.unbiased_x();
+			}
+			if (iterator.unbiased_x() < min_x)
+			{
+				min_x = iterator.unbiased_x();
+			}
+			if (iterator.unbiased_y() > max_y)
+			{
+				max_y = iterator.unbiased_y();
+			}
+			if (iterator.unbiased_y() < min_y)
+			{
+				min_y = iterator.unbiased_y();
+			}
+		}
+
+		++iterator;
+	}
+
+	rect->left(static_cast< double >(min_x) / iterator.width());
+	rect->right(static_cast< double >(max_x) / iterator.width());
+	rect->top(static_cast< double >(min_y) / iterator.height());
+	rect->bottom(static_cast< double >(max_y) / iterator.height());
+}
 
 } // namespace Image

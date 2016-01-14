@@ -25,6 +25,8 @@ public:
 	bool has_next() const;
 	int width() const;
 	int height() const;
+	int unbiased_x() const;
+	int unbiased_y() const;
 };
 
 } // namespace Iterator

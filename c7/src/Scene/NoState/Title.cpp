@@ -4,7 +4,6 @@
 #include "Controller/Game.h"
 #include "Iterator/Loop.h"
 #include "Constants.h"
-#include "Game/Law.h"
 
 namespace Scene
 {

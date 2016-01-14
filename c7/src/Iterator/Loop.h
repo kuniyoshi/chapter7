@@ -19,9 +19,11 @@ public:
 	operator int() const;
 	Loop& operator++();
 	Loop& operator--();
+	int min() const;
 	int max() const;
 	void set_min_max(int min, int max);
 	bool did_loop() const;
+	int unbiased_index() const;
 };
 
 } // namespace Iterator

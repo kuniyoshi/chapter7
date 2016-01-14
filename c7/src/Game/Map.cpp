@@ -11,7 +11,8 @@ namespace Game
 Map::Map(int width, int height)
 : width_(width), height_(height)
 {
-	cells_.set_size(width_, height_);
+	background_cells_.set_size(width_, height_);
+	foreground_cells_.set_size(width_, height_);
 }
 
 void Map::load()
@@ -20,11 +21,12 @@ void Map::load()
 	{
 		for (int x = 0; x < width_; ++x)
 		{
-			cells_(x, y) = (y == 0 || y == height_ - 1 || x == 0 || x == width_ - 1)
+			background_cells_(x, y) = (y == 0 || y == height_ - 1 || x == 0 || x == width_ - 1)
 				? State::OBJECT_IMAGE_BLOCK
 				: (!(y % 2) && !(x % 2))
 				? State::OBJECT_IMAGE_BLOCK
 				: State::OBJECT_IMAGE_FLOOR;
+			foreground_cells_(x, y) = State::OBJECT_IMAGE_NOTHING;
 		}
 	}
 }
@@ -39,7 +41,7 @@ void Map::draw(const Image::Sprite& image) const
 	{
 		for (int x = 0; x < width_; ++x)
 		{
-			image.copy(	cells_(x, y),
+			image.copy(	background_cells_(x, y),
 						Point(x, y),
 						size,
 						vram);
@@ -47,14 +49,41 @@ void Map::draw(const Image::Sprite& image) const
 	}
 }
 
-bool Map::is_block(int x, int y) const
+namespace
 {
-	return cells_(x, y) == State::OBJECT_IMAGE_BLOCK;
+
+bool is_block(const Array2D< State::ObjectImage >& cells, int x, int y)
+{
+	return cells(x, y) == State::OBJECT_IMAGE_BLOCK;
 }
 
-bool Map::is_block(const Point& point) const
+bool is_block(const Array2D< State::ObjectImage >& cells, const Point& point)
 {
-	return cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
+	return cells(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
+}
+
+bool is_bomb(const Array2D< State::ObjectImage >& cells, int x, int y)
+{
+	return cells(x, y) == State::OBJECT_IMAGE_BOMB;
+}
+
+bool is_bomb(const Array2D< State::ObjectImage >& cells, const Point& point)
+{
+	return cells(point.x(), point.y()) == State::OBJECT_IMAGE_BOMB;
+}
+
+} // namespace -
+
+bool Map::can_not_invade(int x, int y) const
+{
+	return is_block(background_cells_, x, y)
+		|| is_bomb(foreground_cells_, x, y);
+}
+
+bool Map::can_not_invade(const Point& point) const
+{
+	return is_block(background_cells_, point)
+		|| is_bomb(foreground_cells_, point);
 }
 
 } // namespace Game

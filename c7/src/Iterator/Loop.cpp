@@ -45,6 +45,7 @@ Loop& Loop::operator--()
 	return *this;
 }
 
+int Loop::min() const { return min_; }
 int Loop::max() const { return max_; }
 
 void Loop::set_min_max(int min, int max)
@@ -54,5 +55,7 @@ void Loop::set_min_max(int min, int max)
 }
 
 bool Loop::did_loop() const { return did_loop_; }
+
+int Loop::unbiased_index() const { return index_ - min_; }
 
 } // namespace Iterator

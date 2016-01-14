@@ -4,26 +4,9 @@
 #include "Controller/Game.h"
 #include "Constants.h"
 
-namespace Image
-{
-
-class Sprite;
-
-} // namespace Image
-
-namespace Game
-{
-
-class Map;
-
-namespace Object
-{
-
-class Player;
-
-} // namespace Object
-
-} // namespace Game
+namespace Image { class Sprite; }
+namespace Game { class Map; }
+namespace Game { namespace Object { class Player; } }
 
 class State
 {
@@ -43,12 +26,15 @@ public:
 		OBJECT_IMAGE_BOMB,
 		OBJECT_IMAGE_CROSS_STORM,
 		OBJECT_IMAGE_BURNING_WALL = 12,
+		OBJECT_IMAGE_NOTHING,
 	};
 
 private:
 	Image::Sprite* object_image_;
 	Game::Map* map_;
 	Game::Object::Player* player1p_;
+	Game::Object::Player* player2p_;
+	Constants::PlayMode play_mode_;
 
 public:
 	State();

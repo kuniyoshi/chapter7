@@ -19,7 +19,8 @@ namespace Game
 class Map
 {
 private:
-	Array2D< State::ObjectImage > cells_;
+	Array2D< State::ObjectImage > background_cells_;
+	Array2D< State::ObjectImage > foreground_cells_;
 	int width_;
 	int height_;
 
@@ -28,8 +29,8 @@ public:
 	// ~Map();
 	void load();
 	void draw(const Image::Sprite& image) const;
-	bool is_block(int x, int y) const;
-	bool is_block(const Point& point) const;
+	bool can_not_invade(int x, int y) const;
+	bool can_not_invade(const Point& point) const;
 };
 
 } // namespace Game

@@ -3,7 +3,9 @@
 #include "GameLib/Framework.h"
 #include "Game/Event/Move.h"
 #include "Image/Sprite.h"
+#include "Piece.h"
 #include "Point.h"
+#include "Rect.h"
 #include "Size.h"
 #include "State.h"
 
@@ -12,11 +14,6 @@ namespace Game
 
 namespace Object
 {
-
-Player::Player(int index, const Point& point)
-:	Parent(point),
-	player_index_(index), move_event_(0) {}
-Player::~Player() { SAFE_DELETE(move_event_); }
 
 namespace
 {
@@ -31,6 +28,27 @@ State::ObjectImage get_object_image_id(int player_index)
 }
 
 } // namespace -
+
+Player::Player(int index, const Point& point, const Image::Sprite& image)
+:	Parent(point),
+	player_index_(index), move_event_(0),
+	rect_(0.0, 0.0, 0.0, 0.0),
+	ms_to_collision_(0), will_stop_(false), is_stopping_(false)
+{
+	image.set_inner_area_of(get_object_image_id(index), &rect_);
+}
+
+Player::~Player() { SAFE_DELETE(move_event_); }
+
+void Player::ms_to_collision(unsigned new_value) { ms_to_collision_ = new_value; }
+
+bool Player::is_stopping() const { return is_stopping_; }
+
+void Player::clear_volatility_condition()
+{
+	ms_to_collision_ = 0;
+	will_stop_ = false;
+}
 
 void Player::move_to(const Point& new_diff, unsigned now)
 {
@@ -51,6 +69,11 @@ void Player::move_to(const Point& new_diff, unsigned now)
 		return;
 	}
 
+	if (is_stopping_ && new_diff == move_event_->direction())
+	{
+		is_stopping_ = false;
+	}
+
 	if (!move_event_->can_reverse_by(new_diff))
 	{
 		return;
@@ -58,6 +81,11 @@ void Player::move_to(const Point& new_diff, unsigned now)
 
 	move_event_->reverse();
 	Parent::point(Parent::point() + new_diff);
+
+	if (is_stopping_)
+	{
+		is_stopping_ = false;
+	}
 }
 
 void Player::tick(unsigned now)
@@ -67,7 +95,28 @@ void Player::tick(unsigned now)
 		return;
 	}
 
-	move_event_->tick(now);
+	if (is_stopping_)
+	{
+		move_event_->tick_with_no_duration(now);
+		return;
+	}
+	else if (will_stop_)
+	{
+		bool did_consume_all(false);
+		move_event_->tick_until(now, ms_to_collision_, &did_consume_all);
+
+		if (did_consume_all)
+		{
+			is_stopping_ = true;
+		}
+
+		return;
+	}
+	else
+	{
+		move_event_->tick(now);
+		return;
+	}
 }
 
 void Player::draw(const Image::Sprite& image)  const
@@ -105,6 +154,61 @@ void Player::resume(unsigned now)
 	{
 		move_event_->resume(now);
 	}
+}
+
+void Player::stop_until(unsigned ms)
+{
+	will_stop_ = true;
+	ms_to_collision_ = ms;
+}
+
+Piece Player::make_piece() const
+{
+	double unit_per_ms(0.0);
+	double have_moved_unit(0.0);
+
+	if (!move_event_)
+	{
+		return Piece(rect_, Parent::point(), Point(0, 0), unit_per_ms, have_moved_unit);
+	}
+
+	have_moved_unit = move_event_->completion_rate();
+
+	if (!is_stopping_)
+	{
+		unit_per_ms = 1.0 / move_event_->ms_per_unit();
+	}
+
+	return Piece(	rect_,
+					move_event_->point(),
+					move_event_->direction(),
+					unit_per_ms,
+					have_moved_unit);
+}
+
+Point Player::current_point() const
+{
+	if (move_event_)
+	{
+		return move_event_->point();
+	}
+	return Parent::point();
+}
+
+bool Player::does_direction_open(const Player& other, unsigned ms) const
+{
+	if (!move_event_ || is_stopping_)
+	{
+		return false;
+	}
+
+	ms = ms + move_event_->ms_per_unit() / 2;
+
+	Piece me = make_piece();
+	me.have_moved_unit(me.have_moved_unit() + ms * me.unit_per_ms());
+	Piece you = other.make_piece();
+
+	return !me.does_overlap(you);
 }
 
 } // namespace Object
