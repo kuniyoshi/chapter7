@@ -46,7 +46,11 @@ Player::Player(int index, const Point& point, const Image::Sprite& image)
 	image.set_inner_area_of(get_object_image_id(index), &rect_);
 }
 
-Player::~Player() { SAFE_DELETE(move_event_); }
+Player::~Player()
+{
+	SAFE_DELETE(dying_event_);
+	SAFE_DELETE(move_event_);
+}
 
 void Player::ms_to_collision(unsigned new_value) { ms_to_collision_ = new_value; }
 
@@ -69,6 +73,7 @@ void Player::prepare()
 
 		if (dying_event_ && dying_event_->did_complete())
 		{
+			Parent::did_die(true);
 			SAFE_DELETE(dying_event_);
 		}
 	}
@@ -123,14 +128,14 @@ void Player::will_die(unsigned now, unsigned ms_to_completion)
 
 void Player::tick(unsigned now)
 {
-	if (!move_event_)
-	{
-		return;
-	}
-
 	if (dying_event_)
 	{
 		dying_event_->tick(now);
+		return;
+	}
+
+	if (!move_event_)
+	{
 		return;
 	}
 
@@ -169,7 +174,7 @@ void Player::draw(const Image::Sprite& image)  const
 	Size size = Size(f.width(), f.height());
 	unsigned* vram = f.videoMemory();
 
-	double alpha = dying_event_ ? dying_event_->completion_rate() : 0.0;
+	double alpha = dying_event_ ? dying_event_->completion_rate() : -1.0;
 
 	if (!move_event_)
 	{

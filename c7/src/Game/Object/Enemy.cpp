@@ -128,6 +128,9 @@ void Enemy::place_enemies(	const Game::Map& map,
 		sum_distance = sum_distance - distances[j];
 		distances[j] = 0;
 	}
+
+	SAFE_DELETE_ARRAY(placable_points);
+	SAFE_DELETE_ARRAY(distances);
 }
 
 void Enemy::setup_enemies(	int enemy_points_size,
@@ -142,6 +145,7 @@ void Enemy::setup_enemies(	int enemy_points_size,
 	{
 		enemies[i].Parent::point(enemy_points[i]);
 		enemies[i].rect_ = rect;
+		ASSERT(!enemies[i].ai_);
 		enemies[i].ai_ = new Game::Ai::RuleBase(25, 25, 25, 25, 0);
 	}
 }
@@ -171,7 +175,7 @@ void Enemy::draw(const Image::Sprite& image) const
 	Size size(f.width(), f.height());
 	unsigned* vram = f.videoMemory();
 
-	double alpha = dying_event_ ? 1.0 - dying_event_->completion_rate() : 1.0;
+	double alpha = dying_event_ ? dying_event_->completion_rate() : -1.0;
 
 	if (!move_event_)
 	{
@@ -199,8 +203,11 @@ void Enemy::eat(unsigned now, Game::Object::Player* player)
 {
 	ASSERT(!Parent::did_die());
 
-	eat_event_ = new Game::Event::Eat(now, MsToCompleteEating);
-	player->will_die(now, MsToCompleteEating);
+	if (!eat_event_)
+	{
+		eat_event_ = new Game::Event::Eat(now, MsToCompleteEating);
+		player->will_die(now, MsToCompleteEating);
+	}
 }
 
 Piece Enemy::make_piece() const

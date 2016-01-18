@@ -7,7 +7,8 @@ namespace Event
 {
 
 Dying::Dying(unsigned now, unsigned ms_to_completion)
-: Parent(now), ms_to_completion_(ms_to_completion)
+:	Parent(now),
+	duration_(0), ms_to_completion_(ms_to_completion)
 {}
 
 bool Dying::did_complete() const { return duration_ > ms_to_completion_; }

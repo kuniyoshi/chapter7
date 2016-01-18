@@ -17,7 +17,7 @@ const int MapSizeWidth		= 19;
 const int MapSizeHeight		= 15;
 const int SpriteImageWidth	= 4;
 const int SpriteImageHeight	= 4;
-const int EnemyCount		= 10;
+const int EnemyCount		= 3;
 const int Player1StartX		= 1;
 const int Player1StartY		= 1;
 const int Player2StartX		= 17;
@@ -97,6 +97,8 @@ void State::load(Constants::PlayMode play_mode)
 											enemy_points,
 											*object_image_,
 											enemies_);
+		SAFE_DELETE_ARRAY(enemy_points);
+		SAFE_DELETE_ARRAY(group_points);
 	}
 }
 
@@ -389,6 +391,8 @@ bool State::does_game_over() const
 	{
 		return player1p_->did_die() ^ player2p_->did_die();
 	}
+
+	return true;
 }
 
 bool State::does_game_failure() const

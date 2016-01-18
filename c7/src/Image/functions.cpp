@@ -31,9 +31,10 @@ unsigned alpha_blend_additional_alpha(	unsigned upper,
 	unsigned base_g = (base & 0x0000ff00) >> 8;
 	unsigned base_b = (base & 0x000000ff) >> 0;
 	double alpha = static_cast< double >((upper & 0xff000000) >> 24) / 255.0;
-	if (additional_alpha > 0.0 && alpha - additional_alpha > 0.0)
+	if (additional_alpha > 0.0)
 	{
 		alpha = alpha - additional_alpha;
+		alpha = alpha < 0.0 ? 0.0 : alpha;
 	}
 	unsigned upper_r = (upper & 0x00ff0000) >> 16;
 	unsigned upper_g = (upper & 0x0000ff00) >> 8;
@@ -48,7 +49,7 @@ unsigned alpha_blend_additional_alpha(	unsigned upper,
 
 unsigned alpha_blend(unsigned upper, unsigned base)
 {
-	return alpha_blend_additional_alpha(upper, base, 0.0);
+	return alpha_blend_additional_alpha(upper, base, -1.0);
 }
 
 unsigned alpha_blend(unsigned upper, unsigned base, double additional_alpha)
