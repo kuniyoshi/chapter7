@@ -169,7 +169,7 @@ void Player::draw(const Image::Sprite& image)  const
 	Size size = Size(f.width(), f.height());
 	unsigned* vram = f.videoMemory();
 
-	double alpha = dying_event_ ? 1.0 - dying_event_->completion_rate() : 1.0;
+	double alpha = dying_event_ ? dying_event_->completion_rate() : 0.0;
 
 	if (!move_event_)
 	{

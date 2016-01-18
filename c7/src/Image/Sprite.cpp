@@ -48,9 +48,8 @@ Point get_point_from_cell_index(int index, const Size& size, int width)
 					(index / width) * size.height());
 }
 
-void copy_alpha_blend_selectable_alpha(	const Sprite& image,
+void copy_alpha_blend_additional_alpha(	const Sprite& image,
 										int index,
-										bool does_use_specific_alpha,
 										double alpha,
 										const Point& point,
 										const Size& size,
@@ -80,40 +79,22 @@ void copy_alpha_blend_selectable_alpha(	const Sprite& image,
 											destination_bottom_right,
 											size);
 
-	if (does_use_specific_alpha)
+	while (source_iterator.has_next())
 	{
-		while (source_iterator.has_next())
+		if (size.is_iterator_in(destination_iterator))
 		{
-			if (size.is_iterator_in(destination_iterator))
-			{
-				vram[destination_iterator] = alpha_blend(	data[source_iterator],
-															vram[destination_iterator],
-															alpha);
-			}
-
-			++source_iterator;
-			++destination_iterator;
+			vram[destination_iterator] = alpha_blend(	data[source_iterator],
+														vram[destination_iterator],
+														alpha);
 		}
-	}
-	else
-	{
-		while (source_iterator.has_next())
-		{
-			if (size.is_iterator_in(destination_iterator))
-			{
-				vram[destination_iterator] = alpha_blend(	data[source_iterator],
-															vram[destination_iterator]);
-			}
 
-			++source_iterator;
-			++destination_iterator;
-		}
+		++source_iterator;
+		++destination_iterator;
 	}
 }
 
-void copy_alpha_blend_selectable_alpha(	const Sprite& image,
+void copy_alpha_blend_additional_alpha(	const Sprite& image,
 										int index,
-										bool does_use_specific_alpha,
 										double alpha,
 										const Game::Event::Move& event,
 										const Size& size,
@@ -148,35 +129,17 @@ void copy_alpha_blend_selectable_alpha(	const Sprite& image,
 											destination_bottom_right,
 											size);
 
-	if (does_use_specific_alpha)
+	while (source_iterator.has_next())
 	{
-		while (source_iterator.has_next())
+		if (size.is_iterator_in(destination_iterator))
 		{
-			if (size.is_iterator_in(destination_iterator))
-			{
-				vram[destination_iterator] = alpha_blend(	data[source_iterator],
-															vram[destination_iterator],
-															alpha);
-			}
-
-			++source_iterator;
-			++destination_iterator;
-		}
-	}
-	else
-	{
-		while (source_iterator.has_next())
-		{
-			if (size.is_iterator_in(destination_iterator))
-			{
-				vram[destination_iterator] = alpha_blend(	data[source_iterator],
-															vram[destination_iterator]);
-			}
-
-			++source_iterator;
-			++destination_iterator;
+			vram[destination_iterator] = alpha_blend(	data[source_iterator],
+														vram[destination_iterator],
+														alpha);
 		}
 
+		++source_iterator;
+		++destination_iterator;
 	}
 }
 
@@ -187,7 +150,7 @@ void Sprite::copy(	int index,
 					const Size& size,
 					unsigned* vram) const
 {
-	copy_alpha_blend_selectable_alpha(*this, index, true, 1.0, point, size, vram);
+	copy_alpha_blend_additional_alpha(*this, index, 0.0, point, size, vram);
 }
 
 void Sprite::copy(	int index,
@@ -195,7 +158,7 @@ void Sprite::copy(	int index,
 					const Size& size,
 					unsigned* vram) const
 {
-	copy_alpha_blend_selectable_alpha(*this, index, true, 1.0, event, size, vram);
+	copy_alpha_blend_additional_alpha(*this, index, 0.0, event, size, vram);
 }
 
 void Sprite::copy_alpha_blend(	int index,
@@ -204,7 +167,7 @@ void Sprite::copy_alpha_blend(	int index,
 								const Size& size,
 								unsigned* vram) const
 {
-	copy_alpha_blend_selectable_alpha(*this, index, true, alpha, point, size, vram);
+	copy_alpha_blend_additional_alpha(*this, index, alpha, point, size, vram);
 }
 
 void Sprite::copy_alpha_blend(	int index,
@@ -212,7 +175,7 @@ void Sprite::copy_alpha_blend(	int index,
 								const Size& size,
 								unsigned* vram) const
 {
-	copy_alpha_blend_selectable_alpha(*this, index, false, 0.0, point, size, vram);
+	copy_alpha_blend_additional_alpha(*this, index, 0.0, point, size, vram);
 }
 
 
@@ -222,7 +185,7 @@ void Sprite::copy_alpha_blend(	int index,
 								const Size& size,
 								unsigned* vram) const
 {
-	copy_alpha_blend_selectable_alpha(*this, index, true, alpha, event, size, vram);
+	copy_alpha_blend_additional_alpha(*this, index, alpha, event, size, vram);
 }
 
 void Sprite::copy_alpha_blend(	int index,
@@ -230,7 +193,7 @@ void Sprite::copy_alpha_blend(	int index,
 								const Size& size,
 								unsigned* vram) const
 {
-	copy_alpha_blend_selectable_alpha(*this, index, false, 0.0, event, size, vram);
+	copy_alpha_blend_additional_alpha(*this, index, 0.0, event, size, vram);
 }
 
 int Sprite::cell_width() const { return cell_size_->width(); }
