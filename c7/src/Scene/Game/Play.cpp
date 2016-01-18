@@ -27,7 +27,7 @@ Controller::Game::SceneName Play::name() const { return Name_; }
 void Play::update(State* state, Controller::Game::SceneName* next_scene_name)
 {
 	GameLib::Framework f = GameLib::Framework::instance();
-	f.drawDebugString(0, 0, "NOW YOU ARE PLAYING...");
+	f.drawDebugString(0, 1, "NOW YOU ARE PLAYING...");
 
 	if (f.isKeyTriggered(' '))
 	{

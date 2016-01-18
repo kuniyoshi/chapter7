@@ -1,4 +1,5 @@
 #include "State.h"
+#include <sstream>
 #include "GameLib/Framework.h"
 #include "Constants.h"
 #include "File.h"
@@ -17,7 +18,7 @@ const int MapSizeWidth		= 19;
 const int MapSizeHeight		= 15;
 const int SpriteImageWidth	= 4;
 const int SpriteImageHeight	= 4;
-const int EnemyCount		= 3;
+const int EnemyCount		= 1;
 const int Player1StartX		= 1;
 const int Player1StartY		= 1;
 const int Player2StartX		= 17;
@@ -199,6 +200,10 @@ void State::update()
 {
 	GameLib::Framework f = GameLib::Framework::instance();
 	unsigned now = f.time();
+	std::stringstream ss;
+	ss << "FR: ";
+	ss << f.frameRate();
+	f.drawDebugString(0, 0, ss.str().c_str(), 0xff000000);
 
 	player1p_->prepare();
 
