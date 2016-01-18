@@ -18,7 +18,7 @@ const int MapSizeWidth		= 19;
 const int MapSizeHeight		= 15;
 const int SpriteImageWidth	= 4;
 const int SpriteImageHeight	= 4;
-const int EnemyCount		= 1;
+const int EnemyCount		= 3;
 const int Player1StartX		= 1;
 const int Player1StartY		= 1;
 const int Player2StartX		= 17;
@@ -79,7 +79,7 @@ void State::load(Constants::PlayMode play_mode)
 	{
 		enemies_ = new Game::Object::Enemy[EnemyCount];
 
-		Point* group_points = new Point[3 - !!player2p_];
+		Point* group_points = new Point[3 - !player2p_];
 		group_points[0].set_xy(Enemy1GroupStartX, Enemy1GroupStartY);
 		group_points[1].set_xy(Enemy2GroupStartX, Enemy2GroupStartY);
 
@@ -90,7 +90,7 @@ void State::load(Constants::PlayMode play_mode)
 
 		Point* enemy_points = new Point[EnemyCount];
 		Game::Object::Enemy::place_enemies(	*map_,
-											3 - !!player2p_,
+											3 - !player2p_,
 											group_points,
 											EnemyCount,
 											enemy_points);
