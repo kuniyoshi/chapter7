@@ -49,6 +49,9 @@ public:
 	virtual Point current_point() const;
 	virtual void eat(unsigned now, Player* player);
 	virtual Piece make_piece() const;
+#ifndef NDEBUG
+	virtual void move_to(const Point& direction, unsigned now);
+#endif
 	virtual void pause(unsigned now);
 	virtual void prepare();
 	virtual void resume(unsigned now);

@@ -238,6 +238,49 @@ Piece Enemy::make_piece() const
 					have_moved_unit);
 }
 
+#ifndef NDEBUG
+void Enemy::move_to(const Point& direction, unsigned now)
+{
+	if (Parent::did_die() || dying_event_)
+	{
+		return;
+	}
+
+	if (direction.scalar() == 0)
+	{
+		return;
+	}
+
+	if (!move_event_)
+	{
+		move_event_ = new Game::Event::Move(	now,
+												MsToCompleteMoving,
+												Parent::point(),
+												direction);
+		Parent::point(Parent::point() + direction);
+		return;
+	}
+
+	if (is_stopping_ && direction == move_event_->direction())
+	{
+		is_stopping_ = false;
+	}
+
+	if (!move_event_->can_reverse_by(direction))
+	{
+		return;
+	}
+
+	move_event_->reverse();
+	Parent::point(Parent::point() + direction);
+
+	if (is_stopping_)
+	{
+		is_stopping_ = false;
+	}
+}
+#endif
+
 void Enemy::pause(unsigned now)
 {
 	if (eat_event_)
