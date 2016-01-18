@@ -58,4 +58,6 @@ bool Loop::did_loop() const { return did_loop_; }
 
 int Loop::unbiased_index() const { return index_ - min_; }
 
+void Loop::reset() { did_loop_ = false; index_ = min_; }
+
 } // namespace Iterator

@@ -1,6 +1,7 @@
 #include "Game/Object/Player.h"
 #include "GameLib/GameLib.h"
 #include "GameLib/Framework.h"
+#include "Game/Event/Dying.h"
 #include "Game/Event/Move.h"
 #include "Image/Sprite.h"
 #include "Piece.h"
@@ -18,6 +19,13 @@ namespace Object
 namespace
 {
 
+const unsigned MsToCompleteMoving	= 1000;
+
+} // namespace -
+
+namespace
+{
+
 State::ObjectImage get_object_image_id(int player_index)
 {
 	if (player_index == 0)
@@ -31,9 +39,9 @@ State::ObjectImage get_object_image_id(int player_index)
 
 Player::Player(int index, const Point& point, const Image::Sprite& image)
 :	Parent(point),
-	player_index_(index), move_event_(0),
-	rect_(0.0, 0.0, 0.0, 0.0),
-	ms_to_collision_(0), will_stop_(false), is_stopping_(false)
+	player_index_(index),
+	dying_event_(0),move_event_(0),
+	rect_(), ms_to_collision_(0), will_stop_(false), is_stopping_(false)
 {
 	image.set_inner_area_of(get_object_image_id(index), &rect_);
 }
@@ -44,17 +52,33 @@ void Player::ms_to_collision(unsigned new_value) { ms_to_collision_ = new_value;
 
 bool Player::is_stopping() const { return is_stopping_; }
 
-void Player::clear_volatility_condition()
+void Player::prepare()
 {
-	ms_to_collision_ = 0;
-	will_stop_ = false;
+	// clear volatility condition
+	{
+		ms_to_collision_ = 0;
+		will_stop_ = false;
+	}
+
+	// complete event
+	{
+		if (move_event_ && move_event_->did_complete())
+		{
+			SAFE_DELETE(move_event_);
+		}
+
+		if (dying_event_ && dying_event_->did_complete())
+		{
+			SAFE_DELETE(dying_event_);
+		}
+	}
 }
 
 void Player::move_to(const Point& new_diff, unsigned now)
 {
-	if (move_event_ && move_event_->did_complete())
+	if (Parent::did_die() || dying_event_)
 	{
-		SAFE_DELETE(move_event_);
+		return;
 	}
 
 	if (new_diff.scalar() == 0)
@@ -64,7 +88,10 @@ void Player::move_to(const Point& new_diff, unsigned now)
 
 	if (!move_event_)
 	{
-		move_event_ = new Game::Event::Move(now, Parent::point(), new_diff);
+		move_event_ = new Game::Event::Move(	now,
+												MsToCompleteMoving,
+												Parent::point(),
+												new_diff);
 		Parent::point(Parent::point() + new_diff);
 		return;
 	}
@@ -88,10 +115,22 @@ void Player::move_to(const Point& new_diff, unsigned now)
 	}
 }
 
+void Player::will_die(unsigned now, unsigned ms_to_completion)
+{
+	ASSERT(!dying_event_);
+	dying_event_ = new Event::Dying(now, ms_to_completion);
+}
+
 void Player::tick(unsigned now)
 {
 	if (!move_event_)
 	{
+		return;
+	}
+
+	if (dying_event_)
+	{
+		dying_event_->tick(now);
 		return;
 	}
 
@@ -121,13 +160,21 @@ void Player::tick(unsigned now)
 
 void Player::draw(const Image::Sprite& image)  const
 {
+	if (Parent::did_die())
+	{
+		return;
+	}
+
 	GameLib::Framework f = GameLib::Framework::instance();
 	Size size = Size(f.width(), f.height());
 	unsigned* vram = f.videoMemory();
 
+	double alpha = dying_event_ ? 1.0 - dying_event_->completion_rate() : 1.0;
+
 	if (!move_event_)
 	{
 		image.copy_alpha_blend(	get_object_image_id(player_index_),
+								alpha,
 								Parent::point(),
 								size,
 								vram);
@@ -135,6 +182,7 @@ void Player::draw(const Image::Sprite& image)  const
 	}
 
 	image.copy_alpha_blend(	get_object_image_id(player_index_),
+							alpha,
 							*move_event_,
 							size,
 							vram);
@@ -156,7 +204,7 @@ void Player::resume(unsigned now)
 	}
 }
 
-void Player::stop_until(unsigned ms)
+void Player::stop_after(unsigned ms)
 {
 	will_stop_ = true;
 	ms_to_collision_ = ms;

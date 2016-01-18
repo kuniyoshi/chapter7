@@ -8,10 +8,13 @@ namespace Game
 namespace Event
 {
 
-Move::Move(unsigned now, const Point& from, const Point& direction)
+Move::Move(	unsigned now,
+			unsigned ms_per_unit,
+			const Point& from,
+			const Point& direction)
 :	Parent(now),
 	point_(from), direction_(direction),
-	ms_per_unit_(1000), duration_(0), did_complete_(false)
+	ms_per_unit_(ms_per_unit), duration_(0), did_complete_(false)
 {}
 Move::~Move() {}
 

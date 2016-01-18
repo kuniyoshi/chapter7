@@ -1,5 +1,5 @@
 #include "Point.h"
-#include <stdlib.h>
+#include <cmath>
 
 Point::Point() {}
 Point::Point(int x, int y) : x_(x), y_(y) { }
@@ -45,3 +45,8 @@ bool Point::is_in(const Point& left_top, const Point& right_bottom) const
 }
 
 int Point::scalar() const { return abs(x_) + abs(y_); }
+
+int Point::distance(const Point& other) const
+{
+	return std::abs(other.x_ - x_) + std::abs(other.y_ - y_);
+}

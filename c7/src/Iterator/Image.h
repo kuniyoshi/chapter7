@@ -27,6 +27,7 @@ public:
 	int height() const;
 	int unbiased_x() const;
 	int unbiased_y() const;
+	void reset();
 };
 
 } // namespace Iterator

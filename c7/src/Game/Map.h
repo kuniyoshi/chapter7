@@ -26,7 +26,8 @@ private:
 
 public:
 	Map(int width, int height);
-	// ~Map();
+	int width() const;
+	int height() const;
 	void load();
 	void draw(const Image::Sprite& image) const;
 	bool can_not_invade(int x, int y) const;

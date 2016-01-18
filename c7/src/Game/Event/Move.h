@@ -19,7 +19,10 @@ private:
 	bool did_complete_;
 
 public:
-	Move(unsigned now, const Point& from, const Point& direction);
+	Move(	unsigned now,
+			unsigned ms_per_unit,
+			const Point& from,
+			const Point& direction);
 	virtual ~Move();
 	const Point& point() const;
 	const Point& direction() const;

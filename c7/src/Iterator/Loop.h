@@ -24,6 +24,7 @@ public:
 	void set_min_max(int min, int max);
 	bool did_loop() const;
 	int unbiased_index() const;
+	void reset();
 };
 
 } // namespace Iterator

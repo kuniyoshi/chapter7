@@ -33,6 +33,10 @@ private:
 public:
 	Sprite(const File& image_file, int column_count, int row_count);
 	~Sprite();
+	const Size& size() const;
+	const Size& cell_size() const;
+	const unsigned* data() const;
+	int cells_per_column() const;
 	void copy(	int cell_index,
 				const Point& point,
 				const Size& size,
@@ -42,10 +46,20 @@ public:
 				const Size& size,
 				unsigned* vram) const;
 	void copy_alpha_blend(	int cell_index,
+							double alpha,
 							const Point& point,
 							const Size& size,
 							unsigned* vram) const;
 	void copy_alpha_blend(	int cell_index,
+							const Point& point,
+							const Size& size,
+							unsigned* vram) const;
+	void copy_alpha_blend(	int cell_index,
+							const Game::Event::Move& event,
+							const Size& size,
+							unsigned* vram) const;
+	void copy_alpha_blend(	int cell_index,
+							double alpha,
 							const Game::Event::Move& event,
 							const Size& size,
 							unsigned* vram) const;

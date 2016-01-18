@@ -48,6 +48,18 @@ void Play::update(State* state, Controller::Game::SceneName* next_scene_name)
 #endif
 
 	state->update();
+
+	if (state->does_game_over())
+	{
+		*next_scene_name = play_mode_ == Constants::PlayMode1P
+			? Controller::Game::SceneSuccess
+			: Controller::Game::SceneWinLose;
+	}
+	else if (state->does_game_failure())
+	{
+		*next_scene_name = Controller::Game::SceneFailure;
+	}
+
 	state->draw();
 }
 

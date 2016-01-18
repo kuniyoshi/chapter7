@@ -19,6 +19,7 @@ class Parent
 {
 private:
 	Point point_;
+	bool did_die_;
 
 public:
 	Parent();
@@ -26,6 +27,8 @@ public:
 	virtual ~Parent();
 	const Point& point() const;
 	void point(const Point& new_point);
+	virtual bool did_die() const;
+	virtual void did_die(bool new_value);
 	virtual void tick(unsigned now) = 0;
 	virtual void draw(const Image::Sprite& image) const = 0;
 };

@@ -21,6 +21,7 @@ public:
 	void set_xy(int x, int y);
 	bool is_in(const Point& left_top, const Point& right_bottom) const;
 	int scalar() const;
+	int distance(const Point& other) const;
 };
 
 #endif

@@ -6,6 +6,7 @@
 
 namespace Image { class Sprite; }
 namespace Game { class Map; }
+namespace Game { namespace Object { class Enemy; } }
 namespace Game { namespace Object { class Player; } }
 
 class State
@@ -32,6 +33,7 @@ public:
 private:
 	Image::Sprite* object_image_;
 	Game::Map* map_;
+	Game::Object::Enemy* enemies_;
 	Game::Object::Player* player1p_;
 	Game::Object::Player* player2p_;
 	Constants::PlayMode play_mode_;
@@ -44,6 +46,8 @@ public:
 	void draw() const;
 	void pause();
 	void resume();
+	bool does_game_over() const;
+	bool does_game_failure() const;
 };
 
 #endif

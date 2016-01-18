@@ -3,12 +3,11 @@
 #include "Game/Object/Parent.h"
 #include "Rect.h"
 
-namespace Image { class Sprite; }
-
-class Point;
 class Piece;
-
+class Point;
+namespace Game { namespace Event { class Dying; } }
 namespace Game { namespace Event { class Move; } }
+namespace Image { class Sprite; }
 
 namespace Game
 {
@@ -20,6 +19,7 @@ class Player : public Parent
 {
 private:
 	int player_index_;
+	Event::Dying* dying_event_;
 	Event::Move* move_event_;
 	Rect< double > rect_;
 	unsigned ms_to_collision_;
@@ -31,13 +31,14 @@ public:
 	virtual ~Player();
 	virtual void ms_to_collision(unsigned new_value);
 	virtual bool is_stopping() const;
-	virtual void clear_volatility_condition();
+	virtual void prepare();
 	virtual void move_to(const Point& new_point, unsigned now);
+	virtual void will_die(unsigned now, unsigned ms_to_completion);
 	virtual void tick(unsigned now);
 	virtual void draw(const Image::Sprite& image) const;
 	virtual void pause(unsigned now);
 	virtual void resume(unsigned now);
-	virtual void stop_until(unsigned ms);
+	virtual void stop_after(unsigned ms);
 	virtual Piece make_piece() const;
 	virtual Point current_point() const;
 	virtual bool does_direction_open(const Player& other, unsigned ms) const;

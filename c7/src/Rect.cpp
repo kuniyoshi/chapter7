@@ -1,6 +1,11 @@
 #include "Rect.h"
 
 template< class T >
+Rect< T >::Rect()
+: left_(0), right_(0), top_(0), bottom_(0)
+{}
+
+template< class T >
 Rect< T >::Rect(T left, T right, T top, T bottom)
 : left_(left), right_(right), top_(top), bottom_(bottom)
 {}
@@ -30,6 +35,7 @@ T Rect< T >::bottom() const { return bottom_; }
 template< class T >
 void Rect< T >::bottom(T new_value) { bottom_ = new_value; }
 
+template Rect< double >::Rect();
 template Rect< double >::Rect(double, double, double, double);
 template Rect< double >::Rect(const Rect< double >&);
 template double Rect< double >::left() const;

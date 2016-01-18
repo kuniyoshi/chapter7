@@ -33,6 +33,12 @@ Sprite::~Sprite()
 	SAFE_DELETE(data_);
 }
 
+const Size& Sprite::size() const { return *size_; }
+const Size& Sprite::cell_size() const { return *cell_size_; }
+const unsigned* Sprite::data() const { return data_; }
+
+int Sprite::cells_per_column() const { return cells_per_column_; }
+
 namespace
 {
 
@@ -42,6 +48,138 @@ Point get_point_from_cell_index(int index, const Size& size, int width)
 					(index / width) * size.height());
 }
 
+void copy_alpha_blend_selectable_alpha(	const Sprite& image,
+										int index,
+										bool does_use_specific_alpha,
+										double alpha,
+										const Point& point,
+										const Size& size,
+										unsigned* vram)
+{
+	const Size& source_size = image.size();
+	const Size& cell_size = image.cell_size();
+	const unsigned* data = image.data();
+	int cells_per_column = image.cells_per_column();
+
+	Point source_top_left = get_point_from_cell_index(	index,
+														cell_size,
+														cells_per_column);
+	Point source_bottom_right(	source_top_left,
+								cell_size.width() - 1,
+								cell_size.height() - 1);
+	Point destination_top_left(	point.x() * cell_size.width(),
+								point.y() * cell_size.height());
+	Point destination_bottom_right(	destination_top_left,
+									cell_size.width() - 1,
+									cell_size.height() - 1);
+
+	Iterator::Image source_iterator(	source_top_left,
+										source_bottom_right,
+										source_size);
+	Iterator::Image destination_iterator(	destination_top_left,
+											destination_bottom_right,
+											size);
+
+	if (does_use_specific_alpha)
+	{
+		while (source_iterator.has_next())
+		{
+			if (size.is_iterator_in(destination_iterator))
+			{
+				vram[destination_iterator] = alpha_blend(	data[source_iterator],
+															vram[destination_iterator],
+															alpha);
+			}
+
+			++source_iterator;
+			++destination_iterator;
+		}
+	}
+	else
+	{
+		while (source_iterator.has_next())
+		{
+			if (size.is_iterator_in(destination_iterator))
+			{
+				vram[destination_iterator] = alpha_blend(	data[source_iterator],
+															vram[destination_iterator]);
+			}
+
+			++source_iterator;
+			++destination_iterator;
+		}
+	}
+}
+
+void copy_alpha_blend_selectable_alpha(	const Sprite& image,
+										int index,
+										bool does_use_specific_alpha,
+										double alpha,
+										const Game::Event::Move& event,
+										const Size& size,
+										unsigned* vram)
+{
+	const Size& source_size = image.size();
+	const Size& cell_size = image.cell_size();
+	const unsigned* data = image.data();
+	int cells_per_column = image.cells_per_column();
+
+	Point source_top_left = get_point_from_cell_index(	index,
+														cell_size,
+														cells_per_column);
+	Point source_bottom_right(	source_top_left,
+								cell_size.width() - 1,
+								cell_size.height() - 1);
+
+	double rate = event.completion_rate();
+
+	Point destination_top_left(	Point(	event.point().x() * cell_size.width(),
+										event.point().y() * cell_size.height()),
+								static_cast< int >(event.dx() * cell_size.width() * rate),
+								static_cast< int >(event.dy() * cell_size.height() * rate));
+	Point destination_bottom_right(	destination_top_left,
+									cell_size.width() - 1,
+									cell_size.height() - 1);
+
+	Iterator::Image source_iterator(	source_top_left,
+										source_bottom_right,
+										source_size);
+	Iterator::Image destination_iterator(	destination_top_left,
+											destination_bottom_right,
+											size);
+
+	if (does_use_specific_alpha)
+	{
+		while (source_iterator.has_next())
+		{
+			if (size.is_iterator_in(destination_iterator))
+			{
+				vram[destination_iterator] = alpha_blend(	data[source_iterator],
+															vram[destination_iterator],
+															alpha);
+			}
+
+			++source_iterator;
+			++destination_iterator;
+		}
+	}
+	else
+	{
+		while (source_iterator.has_next())
+		{
+			if (size.is_iterator_in(destination_iterator))
+			{
+				vram[destination_iterator] = alpha_blend(	data[source_iterator],
+															vram[destination_iterator]);
+			}
+
+			++source_iterator;
+			++destination_iterator;
+		}
+
+	}
+}
+
 } // namespace -
 
 void Sprite::copy(	int index,
@@ -49,34 +187,7 @@ void Sprite::copy(	int index,
 					const Size& size,
 					unsigned* vram) const
 {
-	Point source_top_left
-	= get_point_from_cell_index(index, *cell_size_, cells_per_column_);
-	Point source_bottom_right(	source_top_left,
-								cell_size_->width() - 1,
-								cell_size_->height() - 1);
-	Point destination_top_left(	point.x() * cell_size_->width(),
-								point.y() * cell_size_->height());
-	Point destination_bottom_right(	destination_top_left,
-									cell_size_->width() - 1,
-									cell_size_->height() - 1);
-
-	Iterator::Image source_iterator(	source_top_left,
-										source_bottom_right,
-										*size_);
-	Iterator::Image destination_iterator(	destination_top_left,
-											destination_bottom_right,
-											size);
-
-	while (source_iterator.has_next())
-	{
-		if (size.is_iterator_in(destination_iterator))
-		{
-			vram[destination_iterator] = data_[source_iterator];
-		}
-		
-		++source_iterator;
-		++destination_iterator;
-	}
+	copy_alpha_blend_selectable_alpha(*this, index, true, 1.0, point, size, vram);
 }
 
 void Sprite::copy(	int index,
@@ -84,39 +195,16 @@ void Sprite::copy(	int index,
 					const Size& size,
 					unsigned* vram) const
 {
-	Point source_top_left
-	= get_point_from_cell_index(index, *cell_size_, cells_per_column_);
-	Point source_bottom_right(	source_top_left,
-								cell_size_->width() - 1,
-								cell_size_->height() - 1);
+	copy_alpha_blend_selectable_alpha(*this, index, true, 1.0, event, size, vram);
+}
 
-	double rate = event.completion_rate();
-	Point destination_top_left(	Point(	event.point(),
-										cell_size_->width() - 1,
-										cell_size_->height() - 1),
-								static_cast< int >(event.dx() * cell_size_->width() * rate),
-								static_cast< int >(event.dy() * cell_size_->height() * rate));
-	Point destination_bottom_right(	destination_top_left,
-									cell_size_->width() - 1,
-									cell_size_->height() - 1);
-
-	Iterator::Image source_iterator(	source_top_left,
-										source_bottom_right,
-										*size_);
-	Iterator::Image destination_iterator(	destination_top_left,
-											destination_bottom_right,
-											size);
-
-	while (source_iterator.has_next())
-	{
-		if (size.is_iterator_in(destination_iterator))
-		{
-			vram[destination_iterator] = data_[source_iterator];
-		}
-
-		++source_iterator;
-		++destination_iterator;
-	}
+void Sprite::copy_alpha_blend(	int index,
+								double alpha,
+								const Point& point,
+								const Size& size,
+								unsigned* vram) const
+{
+	copy_alpha_blend_selectable_alpha(*this, index, true, alpha, point, size, vram);
 }
 
 void Sprite::copy_alpha_blend(	int index,
@@ -124,35 +212,17 @@ void Sprite::copy_alpha_blend(	int index,
 								const Size& size,
 								unsigned* vram) const
 {
-	Point source_top_left
-	= get_point_from_cell_index(index, *cell_size_, cells_per_column_);
-	Point source_bottom_right(	source_top_left,
-								cell_size_->width() - 1,
-								cell_size_->height() - 1);
-	Point destination_top_left(	point.x() * cell_size_->width(),
-								point.y() * cell_size_->height());
-	Point destination_bottom_right(	destination_top_left,
-									cell_size_->width() - 1,
-									cell_size_->height() - 1);
+	copy_alpha_blend_selectable_alpha(*this, index, false, 0.0, point, size, vram);
+}
 
-	Iterator::Image source_iterator(	source_top_left,
-										source_bottom_right,
-										*size_);
-	Iterator::Image destination_iterator(	destination_top_left,
-											destination_bottom_right,
-											size);
 
-	while (source_iterator.has_next())
-	{
-		if (size.is_iterator_in(destination_iterator))
-		{
-			vram[destination_iterator] = alpha_blend(	data_[source_iterator],
-														vram[destination_iterator]);
-		}
-
-		++source_iterator;
-		++destination_iterator;
-	}
+void Sprite::copy_alpha_blend(	int index,
+								double alpha,
+								const Game::Event::Move& event,
+								const Size& size,
+								unsigned* vram) const
+{
+	copy_alpha_blend_selectable_alpha(*this, index, true, alpha, event, size, vram);
 }
 
 void Sprite::copy_alpha_blend(	int index,
@@ -160,40 +230,7 @@ void Sprite::copy_alpha_blend(	int index,
 								const Size& size,
 								unsigned* vram) const
 {
-	Point source_top_left
-	= get_point_from_cell_index(index, *cell_size_, cells_per_column_);
-	Point source_bottom_right(	source_top_left,
-								cell_size_->width() - 1,
-								cell_size_->height() - 1);
-
-	double rate = event.completion_rate();
-
-	Point destination_top_left(	Point(	event.point().x() * cell_size_->width(),
-										event.point().y() * cell_size_->height()),
-								static_cast< int >(event.dx() * cell_size_->width() * rate),
-								static_cast< int >(event.dy() * cell_size_->height() * rate));
-	Point destination_bottom_right(	destination_top_left,
-									cell_size_->width() - 1,
-									cell_size_->height() - 1);
-
-	Iterator::Image source_iterator(	source_top_left,
-										source_bottom_right,
-										*size_);
-	Iterator::Image destination_iterator(	destination_top_left,
-											destination_bottom_right,
-											size);
-
-	while (source_iterator.has_next())
-	{
-		if (size.is_iterator_in(destination_iterator))
-		{
-			vram[destination_iterator] = alpha_blend(	data_[source_iterator],
-														vram[destination_iterator]);
-		}
-
-		++source_iterator;
-		++destination_iterator;
-	}
+	copy_alpha_blend_selectable_alpha(*this, index, false, 0.0, event, size, vram);
 }
 
 int Sprite::cell_width() const { return cell_size_->width(); }

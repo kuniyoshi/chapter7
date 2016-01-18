@@ -10,6 +10,7 @@ private:
 	T top_;
 	T bottom_;
 public:
+	Rect();
 	Rect(T left, T right, T top, T bottom);
 	Rect(const Rect< T >& base);
 	T left() const;

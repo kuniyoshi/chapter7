@@ -39,4 +39,6 @@ int Image::height() const { return loop_y_.max() - loop_y_.min(); }
 int Image::unbiased_x() const { return loop_x_.unbiased_index(); }
 int Image::unbiased_y() const { return loop_y_.unbiased_index(); }
 
+void Image::reset() { loop_x_.reset(); loop_y_.reset(); }
+
 } // namespace Iterator

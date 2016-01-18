@@ -15,6 +15,9 @@ Map::Map(int width, int height)
 	foreground_cells_.set_size(width_, height_);
 }
 
+int Map::width() const { return width_; }
+int Map::height() const { return height_; }
+
 void Map::load()
 {
 	for (int y = 0; y < height_; ++y)
