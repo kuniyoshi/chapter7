@@ -19,19 +19,19 @@ namespace Game
 class Map
 {
 private:
-	Array2D< State::ObjectImage > background_cells_;
-	Array2D< State::ObjectImage > foreground_cells_;
-	int width_;
-	int height_;
+    Array2D< State::ObjectImage > background_cells_;
+    Array2D< State::ObjectImage > foreground_cells_;
+    int width_;
+    int height_;
 
 public:
-	Map(int width, int height);
-	int width() const;
-	int height() const;
-	void load();
-	void draw(const Image::Sprite& image) const;
-	bool can_not_invade(int x, int y) const;
-	bool can_not_invade(const Point& point) const;
+    Map(int width, int height);
+    int width() const;
+    int height() const;
+    void load();
+    void draw(const Image::Sprite& image) const;
+    bool can_not_invade(int x, int y) const;
+    bool can_not_invade(const Point& point) const;
 };
 
 } // namespace Game
