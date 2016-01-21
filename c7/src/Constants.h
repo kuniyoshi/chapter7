@@ -4,15 +4,15 @@
 class Constants
 {
 public:
-	enum PlayMode
-	{
-		PlayMode1P,
-		PlayMode2P,
-	};
+    enum PlayMode
+    {
+        PlayMode1P,
+        PlayMode2P,
+    };
 
 public:
-	Constants();
-	~Constants();
+    Constants();
+    ~Constants();
 };
 
 #endif
