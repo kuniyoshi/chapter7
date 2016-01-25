@@ -55,38 +55,60 @@ void Map::draw(const Image::Sprite& image) const
 namespace
 {
 
-bool is_block(const Array2D< State::ObjectImage >& cells, int x, int y)
+bool is_pos_block(const Array2D< State::ObjectImage >& cells, int x, int y)
 {
     return cells(x, y) == State::OBJECT_IMAGE_BLOCK;
 }
 
-bool is_block(const Array2D< State::ObjectImage >& cells, const Point& point)
+bool is_pos_block(const Array2D< State::ObjectImage >& cells, const Point& point)
 {
     return cells(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
 }
 
-bool is_bomb(const Array2D< State::ObjectImage >& cells, int x, int y)
+bool is_pos_bomb(const Array2D< State::ObjectImage >& cells, int x, int y)
 {
     return cells(x, y) == State::OBJECT_IMAGE_BOMB;
 }
 
-bool is_bomb(const Array2D< State::ObjectImage >& cells, const Point& point)
+bool is_pos_bomb(const Array2D< State::ObjectImage >& cells, const Point& point)
 {
     return cells(point.x(), point.y()) == State::OBJECT_IMAGE_BOMB;
 }
 
 } // namespace -
 
+bool Map::is_block(const Point& point) const
+{
+    return foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
+}
+
+bool Map::is_wall(const Point& point) const
+{
+    return foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_WALL;
+}
+
 bool Map::can_not_invade(int x, int y) const
 {
-    return is_block(background_cells_, x, y)
-        || is_bomb(foreground_cells_, x, y);
+    Point point(x, y);
+    return can_not_invade(point);
 }
 
 bool Map::can_not_invade(const Point& point) const
 {
-    return is_block(background_cells_, point)
-        || is_bomb(foreground_cells_, point);
+    return is_block(point)
+        || is_wall(point)
+        || is_pos_bomb(foreground_cells_, point);
+}
+
+void Map::place(State::ObjectImage id, const Point& point)
+{
+    ASSERT(foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_NOTHING);
+    foreground_cells_(point.x(), point.y()) = id;
+}
+
+void Map::clear(const Point& point)
+{
+    foreground_cells_(point.x(), point.y()) = State::OBJECT_IMAGE_NOTHING;
 }
 
 } // namespace Game

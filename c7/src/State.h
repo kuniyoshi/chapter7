@@ -4,10 +4,12 @@
 #include "Controller/Game.h"
 #include "Constants.h"
 
-namespace Image { class Sprite; }
 namespace Game { class Map; }
+namespace Game { namespace Container { class Bomb; } }
+namespace Game { namespace Container { class Wall; } }
 namespace Game { namespace Object { class Enemy; } }
 namespace Game { namespace Object { class Player; } }
+namespace Image { class Sprite; }
 
 class State
 {
@@ -31,12 +33,14 @@ public:
     };
 
 private:
-    Image::Sprite* object_image_;
+    Constants::PlayMode play_mode_;
+    Game::Container::Bomb* bombs_;
+    Game::Container::Wall* walls_;
     Game::Map* map_;
     Game::Object::Enemy* enemies_;
     Game::Object::Player* player1p_;
     Game::Object::Player* player2p_;
-    Constants::PlayMode play_mode_;
+    Image::Sprite* object_image_;
 
 public:
     State();

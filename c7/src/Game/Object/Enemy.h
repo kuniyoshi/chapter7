@@ -45,6 +45,7 @@ private:
 public:
     Enemy();
     virtual ~Enemy();
+    virtual bool does_dying_is_reserved() const;
     virtual void draw(const Image::Sprite& image) const;
     virtual Point current_point() const;
     virtual void eat(unsigned now, Player* player);

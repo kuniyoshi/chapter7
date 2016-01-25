@@ -1,7 +1,7 @@
 #include "Point.h"
 #include <cmath>
 
-Point::Point() {}
+Point::Point() : x_(0), y_(0) {}
 Point::Point(int x, int y) : x_(x), y_(y) { }
 Point::Point(const Point& base, int x, int y)
 : x_(base.x_ + x), y_(base.y_ + y) {}

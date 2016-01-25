@@ -1,9 +1,12 @@
 #include "State.h"
 #include <sstream>
+#include <utility>
 #include "GameLib/Framework.h"
 #include "Constants.h"
 #include "File.h"
 #include "Game/Map.h"
+#include "Game/Container/Bomb.h"
+#include "Game/Container/Wall.h"
 #include "Game/Object/Enemy.h"
 #include "Game/Object/Player.h"
 #include "Image/Sprite.h"
@@ -33,19 +36,24 @@ const int Enemy3GroupStartY = 13;
 } // namespace -
 
 State::State()
-:   object_image_(0), map_(0),
+:   play_mode_(Constants::PlayMode1P),
+    bombs_(0),
+    walls_(0),
+    map_(0),
+    enemies_(0),
     player1p_(0), player2p_(0),
-    play_mode_(Constants::PlayMode1P),
-    enemies_(0)
+    object_image_(0)
 {} // load will initialize all
 
 State::~State()
 {
-    SAFE_DELETE(object_image_);
+    SAFE_DELETE(bombs_);
+    SAFE_DELETE(walls_);
     SAFE_DELETE(map_);
+    SAFE_DELETE_ARRAY(enemies_);
     SAFE_DELETE(player1p_);
     SAFE_DELETE(player2p_);
-    SAFE_DELETE_ARRAY(enemies_);
+    SAFE_DELETE(object_image_);
 }
 
 void State::load(Constants::PlayMode play_mode)
@@ -77,6 +85,16 @@ void State::load(Constants::PlayMode play_mode)
     }
 
     {
+        ASSERT(!walls_);
+        Point player1_point = player1p_->current_point();
+        Point player2_point = player2p_
+        ? player2p_->current_point()
+        : player1p_->current_point();
+
+        walls_ = new Game::Container::Wall(player1_point, player2_point, map_);
+    }
+
+    {
         enemies_ = new Game::Object::Enemy[EnemyCount];
 
         Point* group_points = new Point[3 - !player2p_];
@@ -100,6 +118,13 @@ void State::load(Constants::PlayMode play_mode)
                                             enemies_);
         SAFE_DELETE_ARRAY(enemy_points);
         SAFE_DELETE_ARRAY(group_points);
+    }
+
+    {
+        ASSERT(!bombs_);
+        int max_bombs = Game::Object::Player::MaxBombs;
+        bombs_ = new Game::Container::Bomb( (2 - !player2p_) * max_bombs,
+                                            *object_image_);
     }
 }
 
@@ -214,6 +239,9 @@ void State::update()
 
     prepare_for_each_enemies(enemies_);
 
+    bombs_->clean_up_all_garbage(map_);
+    walls_->clean_up_all_garbage(map_);
+
     Point player1p_point = player1p_->point();
     Point player1p_direction(0, 0);
 
@@ -259,6 +287,16 @@ void State::update()
         }
 
         player2p_->move_to(player2p_direction, now);
+    }
+
+    if (f.isKeyOn('F'))
+    {
+        player1p_->plant_a_bomb(now, bombs_, map_);
+    }
+
+    if (player2p_ && f.isKeyOn('O'))
+    {
+        player2p_->plant_a_bomb(now, bombs_, map_);
     }
 
     set_each_enemies_direction(*map_, enemies_, now);
@@ -328,6 +366,21 @@ void State::update()
     }
 
     tick_for_each_enemies(now, enemies_);
+
+    bombs_->tick(now, *map_);
+    walls_->tick(now);
+
+    bombs_->kill_enemies_if_in_explosion(now, EnemyCount, enemies_);
+
+    bombs_->kill_player_if_in_explosion(now, player1p_);
+
+    if (player2p_)
+    {
+        bombs_->kill_player_if_in_explosion(now, player2p_);
+    }
+
+    bombs_->chain_explosion(now);
+    bombs_->burn_out_walls_if_explosion_reaches(now, *map_, walls_);
 }
 
 void State::draw() const
@@ -344,6 +397,9 @@ void State::draw() const
     {
         enemies_[i].draw(*object_image_);
     }
+
+    bombs_->draw(*object_image_);
+    walls_->draw(*object_image_);
 }
 
 void State::pause()
@@ -361,6 +417,9 @@ void State::pause()
     {
         enemies_[i].pause(now);
     }
+
+    bombs_->pause(now);
+    walls_->pause(now);
 }
 
 void State::resume()
@@ -378,6 +437,9 @@ void State::resume()
     {
         enemies_[i].resume(now);
     }
+
+    bombs_->resume(now);
+    walls_->resume(now);
 }
 
 bool State::does_game_over() const

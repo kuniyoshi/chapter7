@@ -39,6 +39,7 @@ public:
     double get_x_difference_to(const Piece& destination) const;
     double get_y_difference_to(const Piece& destination) const;
     bool does_overlap(const Piece& other) const;
+    Rect< double > make_rect() const;
 };
 
 #endif

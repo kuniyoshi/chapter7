@@ -164,6 +164,8 @@ Enemy::~Enemy()
     SAFE_DELETE(move_event_);
 }
 
+bool Enemy::does_dying_is_reserved() const { return !!dying_event_; }
+
 void Enemy::draw(const Image::Sprite& image) const
 {
     if (Parent::did_die())
@@ -226,7 +228,7 @@ Piece Enemy::make_piece() const
 
     have_moved_unit = move_event_->completion_rate();
 
-    if (!is_stopping_)
+    if (!dying_event_ && !is_stopping_)
     {
         unit_per_ms = 1.0 / move_event_->ms_per_unit();
     }

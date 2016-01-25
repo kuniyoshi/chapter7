@@ -139,3 +139,13 @@ bool Piece::does_overlap(const Piece& other) const
 
     return does_x_overlap && does_y_overlap;
 }
+
+Rect< double > Piece::make_rect() const
+{
+    double this_x_offset = point_.x() + get_current_x_offset();
+    double this_y_offset = point_.y() + get_current_y_offset();
+    return Rect< double >(  this_x_offset + rect_.left(),
+                            this_x_offset + rect_.right(),
+                            this_y_offset + rect_.top(),
+                            this_y_offset + rect_.bottom());
+}

@@ -5,6 +5,8 @@
 
 class Piece;
 class Point;
+namespace Game { class Map; }
+namespace Game { namespace Container { class Bomb; } }
 namespace Game { namespace Event { class Dying; } }
 namespace Game { namespace Event { class Move; } }
 namespace Image { class Sprite; }
@@ -17,6 +19,9 @@ namespace Object
 
 class Player : public Parent
 {
+public:
+    static const int MaxBombs;
+
 private:
     int player_index_;
     Event::Dying* dying_event_;
@@ -25,10 +30,13 @@ private:
     unsigned ms_to_collision_;
     bool will_stop_;
     bool is_stopping_;
+    int power_;
+    int max_bombs_;
 
 public:
     Player(int index, const Point& point, const Image::Sprite& image);
     virtual ~Player();
+    virtual int player_index() const;
     virtual void ms_to_collision(unsigned new_value);
     virtual bool is_stopping() const;
     virtual void prepare();
@@ -42,6 +50,10 @@ public:
     virtual Piece make_piece() const;
     virtual Point current_point() const;
     virtual bool does_direction_open(const Player& other, unsigned ms) const;
+    virtual void plant_a_bomb(  unsigned now,
+                                Container::Bomb* bombs,
+                                Map* map) const;
+    virtual bool does_dying_is_reserved() const;
 };
 
 } // namespace Object

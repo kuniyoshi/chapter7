@@ -1,5 +1,7 @@
 #ifndef BAKUDAN_CONSTANTS_H_
-#define BAKUDAN_CONSTANTS_H_ value
+#define BAKUDAN_CONSTANTS_H_
+
+class Point;
 
 class Constants
 {
@@ -9,6 +11,19 @@ public:
         PlayMode1P,
         PlayMode2P,
     };
+
+    enum DirectionName
+    {
+        DirectionNameLeft,
+        DirectionNameRight,
+        DirectionNameTop,
+        DirectionNameBottom,
+
+        DirectionNameSize,
+    };
+
+public:
+    static const Point& direction(DirectionName id);
 
 public:
     Constants();
