@@ -17,7 +17,7 @@ namespace Container
 namespace
 {
 
-const int WallPercent           = 80;
+const int WallPercent           = 60;
 const int DistanceToKeepArea    = 3;
 
 } // namespace -
@@ -28,7 +28,7 @@ Wall::Wall(const Point& point1p, const Point& point2p, Map* map)
     GameLib::Framework f = GameLib::Framework::instance();
 
     Iterator::Image image_iterator( Point(0, 0),
-                                    Point(map->width() - 1, map->height()),
+                                    Point(map->width() - 1, map->height() - 1),
                                     Size(map->width(), map->height()));
 
     int wall_count = 0;
@@ -43,6 +43,11 @@ Wall::Wall(const Point& point1p, const Point& point2p, Map* map)
         }
 
         if (p.distance(point2p) < DistanceToKeepArea)
+        {
+            continue;
+        }
+
+        if (map->can_not_invade(p))
         {
             continue;
         }
