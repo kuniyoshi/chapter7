@@ -1,10 +1,13 @@
 #include "Game/Object/Player.h"
+#include <utility>
 #include "GameLib/GameLib.h"
 #include "GameLib/Framework.h"
 #include "Game/Container/Bomb.h"
+#include "Game/Container/Item.h"
 #include "Game/Event/Dying.h"
 #include "Game/Event/Move.h"
 #include "Game/Map.h"
+#include "Game/Object/Item.h"
 #include "Image/Sprite.h"
 #include "Piece.h"
 #include "Point.h"
@@ -62,6 +65,14 @@ int Player::player_index() const { return player_index_; }
 void Player::ms_to_collision(unsigned new_value) { ms_to_collision_ = new_value; }
 
 bool Player::is_stopping() const { return is_stopping_; }
+
+int Player::power() const { return power_; }
+
+void Player::power(int new_value) { power_ = new_value; }
+
+int Player::max_bombs() const { return max_bombs_; }
+
+void Player::max_bombs(int new_value) { max_bombs_ = new_value; }
 
 void Player::prepare()
 {
@@ -284,6 +295,21 @@ void Player::plant_a_bomb(  unsigned now,
 }
 
 bool Player::does_dying_is_reserved() const { return !!dying_event_; }
+
+void Player::gain_item(Container::Item* items)
+{
+    if (!move_event_ || !move_event_->did_complete())
+    {
+        return;
+    }
+
+    std::pair< bool, Object::Item* > item = items->get_item(Parent::point());
+
+    if (item.first)
+    {
+        (item.second)->give(this);
+    }
+}
 
 } // namespace Object
 

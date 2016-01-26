@@ -6,6 +6,7 @@
 
 namespace Game { class Map; }
 namespace Game { namespace Container { class Bomb; } }
+namespace Game { namespace Container { class Item; } }
 namespace Game { namespace Container { class Wall; } }
 namespace Game { namespace Object { class Enemy; } }
 namespace Game { namespace Object { class Player; } }
@@ -35,6 +36,7 @@ public:
 private:
     Constants::PlayMode play_mode_;
     Game::Container::Bomb* bombs_;
+    Game::Container::Item* items_;
     Game::Container::Wall* walls_;
     Game::Map* map_;
     Game::Object::Enemy* enemies_;

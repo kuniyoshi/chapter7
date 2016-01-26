@@ -86,6 +86,8 @@ Wall::~Wall()
     walls_.clear();
 }
 
+const Object::Wall* Wall::at(int index) const { return walls_.at(index); }
+
 void Wall::burn_one(const Point& point, unsigned now, unsigned ms_to_completion)
 {
     std::vector< Object::Wall* >::iterator iterator = walls_.begin();
@@ -191,6 +193,8 @@ void Wall::resume(unsigned now)
         (*iterator)->resume(now);
     }
 }
+
+int Wall::size() const { return walls_.size(); }
 
 void Wall::tick(unsigned now)
 {

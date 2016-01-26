@@ -7,6 +7,7 @@ class Piece;
 class Point;
 namespace Game { class Map; }
 namespace Game { namespace Container { class Bomb; } }
+namespace Game { namespace Container { class Item; } }
 namespace Game { namespace Event { class Dying; } }
 namespace Game { namespace Event { class Move; } }
 namespace Image { class Sprite; }
@@ -39,6 +40,10 @@ public:
     virtual int player_index() const;
     virtual void ms_to_collision(unsigned new_value);
     virtual bool is_stopping() const;
+    virtual int power() const;
+    virtual void power(int new_value);
+    virtual int max_bombs() const;
+    virtual void max_bombs(int new_value);
     virtual void prepare();
     virtual void move_to(const Point& new_point, unsigned now);
     virtual void will_die(unsigned now, unsigned ms_to_completion);
@@ -54,6 +59,7 @@ public:
                                 Container::Bomb* bombs,
                                 Map* map) const;
     virtual bool does_dying_is_reserved() const;
+    virtual void gain_item(Container::Item* items);
 };
 
 } // namespace Object

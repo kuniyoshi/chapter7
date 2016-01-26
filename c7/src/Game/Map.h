@@ -31,6 +31,7 @@ public:
     void load();
     void draw(const Image::Sprite& image) const;
     bool is_block(const Point& point) const;
+    bool is_burning_wall(const Point& point) const;
     bool is_wall(const Point& point) const;
     bool can_not_invade(int x, int y) const;
     bool can_not_invade(const Point& point) const;

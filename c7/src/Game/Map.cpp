@@ -87,6 +87,12 @@ bool Map::is_block(const Point& point) const
     return background_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
 }
 
+bool Map::is_burning_wall(const Point& point) const
+{
+    return foreground_cells_(point.x(), point.y())
+    == State::OBJECT_IMAGE_BURNING_WALL;
+}
+
 bool Map::is_wall(const Point& point) const
 {
     return foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_WALL

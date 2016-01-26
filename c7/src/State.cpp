@@ -6,6 +6,7 @@
 #include "File.h"
 #include "Game/Map.h"
 #include "Game/Container/Bomb.h"
+#include "Game/Container/Item.h"
 #include "Game/Container/Wall.h"
 #include "Game/Object/Enemy.h"
 #include "Game/Object/Player.h"
@@ -32,12 +33,15 @@ const int Enemy2GroupStartX = 1;
 const int Enemy2GroupStartY = 13;
 const int Enemy3GroupStartX = 17;
 const int Enemy3GroupStartY = 13;
+const int ItemBombCount     = 3;
+const int ItemBurnCount     = 3;
 
 } // namespace -
 
 State::State()
 :   play_mode_(Constants::PlayMode1P),
     bombs_(0),
+    items_(0),
     walls_(0),
     map_(0),
     enemies_(0),
@@ -48,6 +52,7 @@ State::State()
 State::~State()
 {
     SAFE_DELETE(bombs_);
+    SAFE_DELETE(items_);
     SAFE_DELETE(walls_);
     SAFE_DELETE(map_);
     SAFE_DELETE_ARRAY(enemies_);
@@ -127,6 +132,13 @@ void State::load(Constants::PlayMode play_mode)
         int max_bombs = Game::Object::Player::MaxBombs;
         bombs_ = new Game::Container::Bomb( (2 - !player2p_) * max_bombs,
                                             *object_image_);
+    }
+
+    {
+        ASSERT(!items_);
+        items_ = new Game::Container::Item( ItemBombCount,
+                                            ItemBurnCount,
+                                            *walls_);
     }
 }
 
@@ -243,6 +255,7 @@ void State::update()
 
     bombs_->clean_up_all_garbage(map_);
     walls_->clean_up_all_garbage(map_);
+    items_->clean_up_all_garbage();
 
     Point player1p_point = player1p_->point();
     Point player1p_direction(0, 0);
@@ -377,6 +390,13 @@ void State::update()
         player2p_->tick(now);
     }
 
+    player1p_->gain_item(items_);
+
+    if (player2p_)
+    {
+        player2p_->gain_item(items_);
+    }
+
     tick_for_each_enemies(now, enemies_);
 
     bombs_->tick(now, *map_);
@@ -400,6 +420,7 @@ void State::draw() const
 {
     map_->draw(*object_image_);
     bombs_->draw(*object_image_);
+    items_->draw(*object_image_, *map_);
     walls_->draw(*object_image_);
 
     player1p_->draw(*object_image_);

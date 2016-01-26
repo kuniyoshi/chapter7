@@ -16,11 +16,12 @@ namespace Container
 class Wall
 {
 private:
-    std::vector< Game::Object::Wall* > walls_;
+    std::vector< Object::Wall* > walls_;
 
 public:
     Wall(const Point& point1p, const Point& point2p, Map* map);
     ~Wall();
+    const Object::Wall* at(int index) const;
     void burn_one(const Point& point, unsigned now, unsigned ms_to_completion);
     void burn_wall_to_map(Map* map);
     void clean_up_all_garbage(Map* map);
@@ -28,6 +29,7 @@ public:
     void freeze_drawing_until_burn();
     void pause(unsigned now);
     void resume(unsigned now);
+    int size() const;
     void tick(unsigned now);
 };
 
