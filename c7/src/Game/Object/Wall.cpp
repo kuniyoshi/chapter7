@@ -40,6 +40,8 @@ void Wall::draw(const Image::Sprite& image) const
                             vram);
 }
 
+bool Wall::is_burning() const { return !!burn_event_; }
+
 void Wall::pause(unsigned now)
 {
     if (burn_event_)

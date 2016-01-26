@@ -28,7 +28,8 @@ const unsigned MsToStart = 3000;
 } // namespace -
 
 Bomb::Bomb(const Point& destination, int power, int owner_id, unsigned now)
-:   explode_event_(0),
+:   Parent(destination),
+    explode_event_(0),
     central_(),
     horizontal_(),
     vertical_(),
@@ -107,8 +108,10 @@ bool does_rect_overlap(const Rect< double >& a, const Rect< double >&b )
 bool Bomb::does_overlap(const Rect< double >& rect) const
 {
     ASSERT(is_exploding());
+    Point point = Parent::point();
 
     Rect< double > central(0.0, 1.0, 0.0, 1.0);
+    central.add(point.x(), point.y());
 
     if (does_rect_overlap(rect, central))
     {
@@ -127,20 +130,17 @@ bool Bomb::does_overlap(const Rect< double >& rect) const
             explosion_rect.top(horizontal_.top());
             explosion_rect.bottom(horizontal_.bottom());
             explosion_rect.left(direction.x() > 0 ? 0 : -length);
-            explosion_rect.right(direction.x() > 0 ? length : 0);
+            explosion_rect.right(direction.x() > 0 ? 1 + length : 0);
         }
         else
         {
             explosion_rect.left(vertical_.left());
             explosion_rect.right(vertical_.right());
             explosion_rect.top(direction.y() > 0 ? 0 : -length);
-            explosion_rect.bottom(direction.y() > 0 ? length : 0);
+            explosion_rect.bottom(direction.y() > 0 ? 1 + length : 0);
         }
 
-        explosion_rect.left(explosion_rect.left() + Parent::point().x());
-        explosion_rect.right(explosion_rect.right() + Parent::point().x());
-        explosion_rect.top(explosion_rect.top() + Parent::point().y());
-        explosion_rect.bottom(explosion_rect.bottom() + Parent::point().y());
+        explosion_rect.add(point.x(), point.y());
 
         if (does_rect_overlap(rect, explosion_rect))
         {
@@ -168,12 +168,6 @@ void Bomb::draw(const Image::Sprite& image) const
                                 vram);
         return;
     }
-
-    image.copy_alpha_blend( State::OBJECT_IMAGE_CROSS_STORM,
-                            explode_event_->get_alpha(),
-                            Parent::point(),
-                            size,
-                            vram);
 
     for (int i = 0; i < Constants::DirectionNameSize; ++i)
     {
@@ -212,6 +206,17 @@ void Bomb::draw(const Image::Sprite& image) const
                                 size,
                                 vram);
     }
+
+    image.copy( State::OBJECT_IMAGE_FLOOR,
+                Parent::point(),
+                size,
+                vram);
+
+    image.copy_alpha_blend( State::OBJECT_IMAGE_CROSS_STORM,
+                            explode_event_->get_alpha(),
+                            Parent::point(),
+                            size,
+                            vram);
 }
 
 bool Bomb::is_exploding() const

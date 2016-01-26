@@ -23,7 +23,7 @@ const int Player::MaxBombs = 5;
 namespace
 {
 
-const unsigned MsToCompleteMoving   = 1000;
+const unsigned MsToCompleteMoving   = 500;
 
 } // namespace -
 

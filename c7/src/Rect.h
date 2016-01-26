@@ -21,6 +21,7 @@ public:
     void top(T new_value);
     T bottom() const;
     void bottom(T new_value);
+    void add(T x, T y);
 };
 
 #endif

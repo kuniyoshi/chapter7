@@ -35,6 +35,15 @@ T Rect< T >::bottom() const { return bottom_; }
 template< class T >
 void Rect< T >::bottom(T new_value) { bottom_ = new_value; }
 
+template< class T >
+void Rect< T >::add(T x, T y)
+{
+    left_ = left_ + x;
+    right_ = right_ + x;
+    top_ = top_ + y;
+    bottom_ = bottom_ + y;
+}
+
 template Rect< double >::Rect();
 template Rect< double >::Rect(double, double, double, double);
 template Rect< double >::Rect(const Rect< double >&);
@@ -46,3 +55,4 @@ template double Rect< double >::top() const;
 template void Rect< double >::top(double);
 template double Rect< double >::bottom() const;
 template void Rect< double >::bottom(double);
+template void Rect< double >::add(double, double);

@@ -66,6 +66,7 @@ double calc_distance(unsigned ms)
 
 double calc_unit(unsigned ms)
 {
+    ASSERT(ms <= MsExploding);
     return calc_distance(ms) / Denominator;
 }
 
@@ -74,21 +75,24 @@ double calc_unit(unsigned ms)
 Explode::Explode(unsigned now, int power, unsigned ms_to_start_explosion)
 :   Parent(now),
     power_(power),
-    // are_directions_growing_(std::vector< bool >()),
     max_lengths_(std::vector< std::pair< bool, double > >()),
     ms_statuses_(std::vector< unsigned >()),
     duration_(0)
 {
-    // are_directions_growing_.reserve(Constants::DirectionNameSize);
     max_lengths_.reserve(Constants::DirectionNameSize);
 
     for (int i = 0; i < Constants::DirectionNameSize; ++i)
     {
-        // are_directions_growing_.push_back(false);
         max_lengths_.push_back(std::pair< bool, double >(false, 0.0));
     }
 
     ms_statuses_.reserve(MsStatusSize);
+
+    for (int i = 0; i < MsStatusSize; ++i)
+    {
+        ms_statuses_.push_back(0);
+    }
+
     ms_statuses_.at(MsStatusIgniting) = ms_to_start_explosion;
     ms_statuses_.at(MsStatusExploding) = MsExploding;
     ms_statuses_.at(MsStatusKeepExploding) = MsKeeping;
@@ -170,23 +174,48 @@ double calc_alpha_on_igniting(  unsigned duration,
 
     if (duration > ms_to_start_explosion)
     {
+        return 1.0;
+    }
+
+    unsigned ms_to_transmitting
+    = ms_to_start_explosion - ms_to_start_explosion / 2;
+
+    if (duration < ms_to_transmitting)
+    {
         return 0.0;
     }
 
-    unsigned ms_to_transmitting = ms_to_start_explosion / 5;
-    unsigned diff = ms_to_start_explosion - duration;
+    unsigned diff1 = duration - ms_to_transmitting;
+    unsigned diff2 = ms_to_start_explosion - ms_to_transmitting;
+    double rate = static_cast< double >(diff1) / diff2;
+    return std::pow(rate, 2);
+}
 
-    if (diff < ms_to_transmitting)
+double calc_alpha(  unsigned now,
+                    unsigned min,
+                    unsigned max,
+                    double from,
+                    double to)
+{
+    if (now < min)
     {
-        unsigned grouping_ms = duration / 50;
-        return (grouping_ms / 2 == 0) ? 1.0 : 0.5;
+        return from;
     }
-    else
+
+    if (now >= max)
     {
-        double rate = static_cast< double >(diff) / ms_to_transmitting;
-        double inverse_alpha = std::pow(rate, 2);
-        return 1.0 - inverse_alpha;
+        return to;
     }
+
+    if (min > max)
+    {
+        return from;
+    }
+
+    unsigned denominator = max - min;
+    unsigned numerator = now - min;
+    double rate = static_cast< double >(numerator) / denominator;
+    return from + (to - from) * rate;
 }
 
 } // namespac -
@@ -199,21 +228,26 @@ double Explode::get_alpha() const
     }
     else if (is_status_exploding(duration_, ms_statuses_))
     {
-        return 0.9;
+        return calc_alpha(  duration_,
+                            ms_statuses_.at(MsStatusIgniting),
+                            ms_statuses_.at(MsStatusExploding),
+                            0.2,
+                            0.1);
     }
     else if (is_status_keep_exploding(duration_, ms_statuses_))
     {
-        return 0.8;
+        return 0.1;
     }
     else // weaking
     {
         unsigned numerator = duration_ > ms_statuses_.at(MsStatusWeaking)
-        ? ms_statuses_.at(MsStatusWeaking)
-        : duration_;
-        numerator = ms_statuses_.at(MsStatusWeaking) - numerator;
+        ? 0
+        : ms_statuses_.at(MsStatusWeaking) - duration_;
         unsigned denominator = ms_statuses_.at(MsStatusWeaking)
                                 - ms_statuses_.at(MsStatusKeepExploding);
-        return static_cast< double >(numerator) / denominator;
+        double rate = static_cast< double >(numerator) / denominator;
+        double alpha = 1 - std::pow(rate, 2);
+        return alpha;
     }
 }
 
@@ -238,17 +272,37 @@ void Explode::tick(unsigned now)
     HALT("do not use this.")
 }
 
+namespace
+{
+
+unsigned calc_exploding_ms( unsigned duration,
+                            std::vector< unsigned > ms_statuses)
+{
+    if (duration > ms_statuses.at(MsStatusExploding))
+    {
+        return MsExploding;
+    }
+    else if (duration > ms_statuses.at(MsStatusIgniting))
+    {
+        return duration - ms_statuses.at(MsStatusIgniting);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+} // namespace -
+
 void Explode::tick(unsigned now, const Point& point, const Map& map)
 {
     unsigned diff = now - Parent::last_stamp();
     duration_ = duration_ + diff;
     Parent::last_stamp(now);
 
-    unsigned ms_exploding = duration_ > ms_statuses_.at(MsStatusExploding)
-    ? MsExploding
-    : duration_ - ms_statuses_.at(MsStatusExploding);
+    unsigned ms_exploding = calc_exploding_ms(duration_, ms_statuses_);
     double normalized_length = calc_unit(ms_exploding);
-    double length =  power_ * normalized_length;
+    double length = power_ * normalized_length;
 
     for (int i = 0; i < Constants::DirectionNameSize; ++i)
     {
@@ -264,7 +318,7 @@ void Explode::tick(unsigned now, const Point& point, const Map& map)
 
         while (current_length < length)
         {
-            int overed_length = static_cast< int >(current_length);
+            int overed_length = static_cast< int >(std::ceil(current_length));
             Point current_point(    point,
                                     overed_length * direction.x(),
                                     overed_length * direction.y());
@@ -272,16 +326,17 @@ void Explode::tick(unsigned now, const Point& point, const Map& map)
             if (map.is_block(current_point) || map.is_wall(current_point))
             {
                 did_stop = true;
+                current_length = std::floor(current_length);
                 break;
             }
 
-            current_length = current_length + 1.0;
+            current_length = current_length + 0.5;
         }
 
         if (did_stop)
         {
             max_lengths_.at(i).first = true;
-            max_lengths_.at(i).second = std::floor(current_length);
+            max_lengths_.at(i).second = current_length;
         }
         else
         {

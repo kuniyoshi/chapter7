@@ -44,6 +44,11 @@ void Map::draw(const Image::Sprite& image) const
     {
         for (int x = 0; x < width_; ++x)
         {
+            if (foreground_cells_(x, y) == State::OBJECT_IMAGE_WALL)
+            {
+                continue;
+            }
+
             image.copy( background_cells_(x, y),
                         Point(x, y),
                         size,
@@ -79,12 +84,13 @@ bool is_pos_bomb(const Array2D< State::ObjectImage >& cells, const Point& point)
 
 bool Map::is_block(const Point& point) const
 {
-    return foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
+    return background_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BLOCK;
 }
 
 bool Map::is_wall(const Point& point) const
 {
-    return foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_WALL;
+    return foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_WALL
+    || foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_BURNING_WALL;
 }
 
 bool Map::can_not_invade(int x, int y) const
@@ -102,7 +108,6 @@ bool Map::can_not_invade(const Point& point) const
 
 void Map::place(State::ObjectImage id, const Point& point)
 {
-    ASSERT(foreground_cells_(point.x(), point.y()) == State::OBJECT_IMAGE_NOTHING);
     foreground_cells_(point.x(), point.y()) = id;
 }
 

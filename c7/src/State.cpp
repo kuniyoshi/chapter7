@@ -21,7 +21,7 @@ const int MapSizeWidth      = 19;
 const int MapSizeHeight     = 15;
 const int SpriteImageWidth  = 4;
 const int SpriteImageHeight = 4;
-const int EnemyCount        = 3;
+const int EnemyCount        = 8;
 const int Player1StartX     = 1;
 const int Player1StartY     = 1;
 const int Player2StartX     = 17;
@@ -68,6 +68,7 @@ void State::load(Constants::PlayMode play_mode)
     ASSERT(!map_);
     map_ = new Game::Map(MapSizeWidth, MapSizeHeight);
     map_->load();
+    map_->draw(*object_image_);
 
     ASSERT(!player1p_);
     player1p_ = new Game::Object::Player(   0,
@@ -92,6 +93,7 @@ void State::load(Constants::PlayMode play_mode)
         : player1p_->current_point();
 
         walls_ = new Game::Container::Wall(player1_point, player2_point, map_);
+        walls_->draw(*object_image_);
     }
 
     {
@@ -332,6 +334,11 @@ void State::update()
 
         for (int i = 0; i < EnemyCount; ++i)
         {
+            if (enemies_[i].did_die())
+            {
+                continue;
+            }
+
             Piece enemy_piece = enemies_[i].make_piece();
 
             if (enemy_piece.does_overlap(player1_piece))
@@ -353,6 +360,11 @@ void State::update()
         {
             if (enemies_[i].make_piece().does_overlap(player1_piece))
             {
+                if (enemies_[i].did_die())
+                {
+                    continue;
+                }
+
                 enemies_[i].eat(now, player1p_);
             }
         }
@@ -369,6 +381,7 @@ void State::update()
 
     bombs_->tick(now, *map_);
     walls_->tick(now);
+    walls_->burn_wall_to_map(map_);
 
     bombs_->kill_enemies_if_in_explosion(now, EnemyCount, enemies_);
 
@@ -386,6 +399,9 @@ void State::update()
 void State::draw() const
 {
     map_->draw(*object_image_);
+    bombs_->draw(*object_image_);
+    walls_->draw(*object_image_);
+
     player1p_->draw(*object_image_);
 
     if (player2p_)
@@ -397,9 +413,6 @@ void State::draw() const
     {
         enemies_[i].draw(*object_image_);
     }
-
-    bombs_->draw(*object_image_);
-    walls_->draw(*object_image_);
 }
 
 void State::pause()

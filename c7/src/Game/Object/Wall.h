@@ -21,6 +21,7 @@ public:
     Wall(const Point& point);
     ~Wall();
     void draw(const Image::Sprite& image) const;
+    bool is_burning() const;
     void pause(unsigned now);
     void resume(unsigned now);
     void tick(unsigned now);

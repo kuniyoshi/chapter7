@@ -31,7 +31,7 @@ double Burn::get_alpha() const
 {
     if (did_complete())
     {
-        return 0.0;
+        return 1.0;
     }
 
     if (duration_ > ms_to_fade_)
@@ -42,7 +42,7 @@ double Burn::get_alpha() const
     }
 
     int blink_group = duration_ / MsToGroup;
-    return blink_group % 2 == 0 ? 1.0 : 0.8;
+    return (blink_group % 2 == 0) ? 0.0 : 0.5;
 }
 
 void Burn::tick(unsigned now)

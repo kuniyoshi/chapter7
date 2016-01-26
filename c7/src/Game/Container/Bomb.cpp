@@ -31,6 +31,12 @@ Bomb::Bomb(int max_count, const Image::Sprite& image)
     central_(), horizontal_(), vertical_()
 {
     bombs_.reserve(max_count);
+
+    for (int i = 0; i < max_count; ++i)
+    {
+        bombs_.push_back(0);
+    }
+
     image.set_inner_area_of(State::OBJECT_IMAGE_BOMB, &central_);
     image.set_inner_area_of(State::OBJECT_IMAGE_HORIZONTAL_STORM, &horizontal_);
     image.set_inner_area_of(State::OBJECT_IMAGE_VERTICAL_STORM, &vertical_);

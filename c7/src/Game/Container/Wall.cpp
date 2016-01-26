@@ -17,7 +17,7 @@ namespace Container
 namespace
 {
 
-const int WallPercent           = 60;
+const int WallPercent           = 40;
 const int DistanceToKeepArea    = 3;
 
 } // namespace -
@@ -97,10 +97,33 @@ void Wall::burn_one(const Point& point, unsigned now, unsigned ms_to_completion)
             continue;
         }
 
+        if ((*iterator)->is_burning())
+        {
+            continue;
+        }
+
         if ((*iterator)->point() == point)
         {
             (*iterator)->will_burn(now, ms_to_completion);
             break;
+        }
+    }
+}
+
+void Wall::burn_wall_to_map(Map* map)
+{
+    std::vector< Object::Wall* >::iterator iterator = walls_.begin();
+
+    for (; iterator != walls_.end(); ++iterator)
+    {
+        if (!(*iterator))
+        {
+            continue;
+        }
+
+        if ((*iterator)->is_burning())
+        {
+            map->place(State::OBJECT_IMAGE_BURNING_WALL, (*iterator)->point());
         }
     }
 }
