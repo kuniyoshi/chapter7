@@ -122,7 +122,11 @@ void Bomb::chain_explosion(unsigned now)
                 continue;
             }
 
-            if ((*iterator)->does_overlap((*i2)->central()))
+            Rect< double > central = (*i2)->central();
+            Point i2_point = (*i2)->point();
+            central.add(i2_point.x(), i2_point.y());
+
+            if ((*iterator)->does_overlap(central))
             {
                 (*i2)->will_explode();
             }
