@@ -12,20 +12,20 @@ class NoState;
 class App
 {
 public:
-	enum ControllerType
-	{
-		ControllerNoState,
-		ControllerGame,
-	};
+    enum ControllerType
+    {
+        ControllerNoState,
+        ControllerGame,
+    };
 
 private:
-	Controller::Game* game_controller_;
-	Controller::NoState* no_state_controller_;
+    Controller::Game* game_controller_;
+    Controller::NoState* no_state_controller_;
 
 public:
-	App();
-	~App();
-	void update();
+    App();
+    ~App();
+    void update();
 };
 
 #endif
