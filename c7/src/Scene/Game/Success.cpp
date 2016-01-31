@@ -26,15 +26,15 @@ Controller::Game::SceneName Success::name() const { return Name_; }
 
 void Success::update(State* state, Controller::Game::SceneName* next_scene_name)
 {
-	GameLib::Framework f = GameLib::Framework::instance();
+    GameLib::Framework f = GameLib::Framework::instance();
 
-	if (f.isKeyTriggered(' '))
-	{
-		*next_scene_name = Controller::Game::SceneNoStateEnding;
-	}
+    if (f.isKeyTriggered(' '))
+    {
+        *next_scene_name = Controller::Game::SceneNoStateEnding;
+    }
 
-	f.drawDebugString(0, 0, "SUCCESS!!!", 0xffffffff);
-	state->draw();
+    f.drawDebugString(0, 0, "SUCCESS!!!", 0xffffffff);
+    state->draw();
 }
 
 } // namespace Game
