@@ -1,8 +1,7 @@
 #ifndef BAKUDAN_STATE_H_
 #define BAKUDAN_STATE_H_
-
-#include "Controller/Game.h"
 #include "Constants.h"
+#include "Controller/Game.h"
 
 namespace Game { class Map; }
 namespace Game { namespace Container { class Bomb; } }

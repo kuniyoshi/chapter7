@@ -1,8 +1,9 @@
 #include "Scene/Game/Play.h"
 #include "GameLib/Framework.h"
-#include "Controller/Game.h"
-#include "State.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Game/InputManager.h"
+#include "State.h"
 
 namespace Scene
 {
@@ -29,23 +30,23 @@ void Play::update(State* state, Controller::Game::SceneName* next_scene_name)
     GameLib::Framework f = GameLib::Framework::instance();
     f.drawDebugString(0, 1, "NOW YOU ARE PLAYING...");
 
-    if (f.isKeyTriggered(' '))
+    ::Game::InputManager user_input = ::Game::InputManager::user2();
+
+    if (user_input.is_option_triggered())
     {
         *next_scene_name = Controller::Game::ScenePause;
         state->pause();
     }
-#ifndef NDEBUG
-    else if (f.isKeyTriggered('G'))
+    else if (user_input.is_test_input_game_success())
     {
         *next_scene_name = play_mode_ == Constants::PlayMode1P
             ? Controller::Game::SceneSuccess
             : Controller::Game::SceneWinLose;
     }
-    else if (play_mode_ == Constants::PlayMode1P && f.isKeyTriggered('B'))
+    else if (play_mode_ == Constants::PlayMode1P && user_input.is_test_input_game_failure())
     {
         *next_scene_name = Controller::Game::SceneFailure;
     }
-#endif
 
     state->update();
 

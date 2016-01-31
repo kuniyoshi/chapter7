@@ -22,11 +22,4 @@ void Parent::delete_background_image()
 	SAFE_DELETE(image_);
 }
 
-void Parent::draw_background_image() const
-{
-	GameLib::Framework f = GameLib::Framework::instance();
-	unsigned* vram = f.videoMemory();
-	image_->copy(Point(0, 0), Size(f.width(), f.height()), vram);
-}
-
 } // namespace Scene

@@ -1,8 +1,9 @@
 #include "Scene/Game/Failure.h"
 #include "GameLib/Framework.h"
-#include "Controller/Game.h"
-#include "State.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Game/InputManager.h"
+#include "State.h"
 
 namespace Scene
 {
@@ -28,7 +29,10 @@ void Failure::update(State* state, Controller::Game::SceneName* next_scene_name)
 {
     GameLib::Framework f = GameLib::Framework::instance();
 
-    if (f.isKeyTriggered(' '))
+    ::Game::InputManager user_input = ::Game::InputManager::user1();
+    user_input.update();
+
+    if (user_input.is_option())
     {
         *next_scene_name = Controller::Game::SceneNoStateGameOver;
     }

@@ -1,8 +1,9 @@
 #include "Scene/NoState/Ending.h"
 #include "GameLib/Framework.h"
-#include "Controller/NoState.h"
-#include "Controller/Game.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Controller/NoState.h"
+#include "Game/InputManager.h"
 
 namespace Scene
 {
@@ -27,7 +28,7 @@ Controller::NoState::SceneName Ending::name() const { return Name_; }
 void Ending::update(    Controller::NoState::SceneName* next_scene_name,
                         Constants::PlayMode*)
 {
-    if (GameLib::Framework::instance().isKeyTriggered(' '))
+    if (::Game::InputManager::user1().is_option())
     {
         *next_scene_name = Controller::NoState::SceneTitle;
     }
@@ -35,8 +36,6 @@ void Ending::update(    Controller::NoState::SceneName* next_scene_name,
     GameLib::Framework::instance().drawDebugString(0, 0, "[ENDING]", 0xffffffff);
     GameLib::Framework::instance().drawDebugString(0, 1, "... finish the game ..", 0xffffffff);
     GameLib::Framework::instance().drawDebugString(0, 2, "Space to return to TITLE.", 0xffffffff);
-    
-    draw_background_image();
 }
 
 } // namespace NoState

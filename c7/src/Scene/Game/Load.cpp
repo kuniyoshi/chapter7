@@ -36,8 +36,6 @@ void Load::update(State* state, Controller::Game::SceneName* next_scene_name)
 		state->load(play_mode_);
 		*next_scene_name = Controller::Game::ScenePlay;
 	}
-
-	draw_background_image();
 }
 
 } // namespace Game

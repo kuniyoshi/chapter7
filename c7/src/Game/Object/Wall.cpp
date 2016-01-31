@@ -23,21 +23,13 @@ Wall::~Wall()
 
 void Wall::draw(const Image::Sprite& image) const
 {
-    GameLib::Framework f = GameLib::Framework::instance();
-    Size size(f.width(), f.height());
-    unsigned* vram = f.videoMemory();
-
     if (!burn_event_)
     {
-        image.copy(State::OBJECT_IMAGE_WALL, Parent::point(), size, vram);
+        image.copy(State::OBJECT_IMAGE_WALL, Parent::point());
         return;
     }
 
-    image.copy_alpha_blend( State::OBJECT_IMAGE_BURNING_WALL,
-                            burn_event_->get_alpha(),
-                            Parent::point(),
-                            size,
-                            vram);
+    image.copy(State::OBJECT_IMAGE_BURNING_WALL, Parent::point());
 }
 
 bool Wall::is_burning() const { return !!burn_event_; }

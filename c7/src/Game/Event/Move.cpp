@@ -1,6 +1,7 @@
 #include "Game/Event/Move.h"
 #include <cmath>
 #include "Point.h"
+#include "Rect.h"
 
 namespace Game
 {
@@ -108,6 +109,20 @@ void Move::reverse()
 	duration_ = ms_per_unit_ - duration_;
 	point_ = point_ + direction_;
 	direction_ = Point(0, 0) - direction_;
+}
+
+Rect< double > Move::make_rect() const
+{
+	Rect< double > rect(	point_.x(),
+							point_.x() + 1.0,
+							point_.y(),
+							point_.y() + 1.0);
+	double rate = completion_rate();
+	rect.left(rect.left() + rate * direction_.x());
+	rect.right(rect.right() + rate * direction_.x());
+	rect.top(rect.top() + rate * direction_.y());
+	rect.bottom(rect.bottom() + rate * direction_.y());
+	return rect;
 }
 
 } // namespace Event

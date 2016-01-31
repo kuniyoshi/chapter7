@@ -155,17 +155,9 @@ void Bomb::draw(const Image::Sprite& image) const
 {
     ASSERT(explode_event_);
 
-    GameLib::Framework f = GameLib::Framework::instance();
-    Size size(f.width(), f.height());
-    unsigned* vram = f.videoMemory();
-
     if (!explode_event_->is_exploding())
     {
-        image.copy_alpha_blend( State::OBJECT_IMAGE_BOMB,
-                                explode_event_->get_alpha(),
-                                Parent::point(),
-                                size,
-                                vram);
+        image.copy(State::OBJECT_IMAGE_BOMB, Parent::point());
         return;
     }
 
@@ -183,11 +175,7 @@ void Bomb::draw(const Image::Sprite& image) const
         for (int power = 0; power < static_cast< int >(length); ++power)
         {
             point = point + direction;
-            image.copy_alpha_blend( id,
-                                    explode_event_->get_alpha(),
-                                    point,
-                                    size,
-                                    vram);
+            image.copy(id, point);
         }
 
         double remained_length = length - static_cast< int >(length);
@@ -197,26 +185,22 @@ void Bomb::draw(const Image::Sprite& image) const
             continue;
         }
 
-        Event::Move move_event(0, 1000, point, direction);
-        move_event.tick(static_cast< unsigned >(1000 * remained_length));
+        Rect< double > rect;
+        rect.left(point.x());
+        rect.right(rect.left() + 1.0);
+        rect.top(point.y());
+        rect.bottom(rect.top() + 1.0);
 
-        image.copy_alpha_blend( id,
-                                explode_event_->get_alpha(),
-                                move_event,
-                                size,
-                                vram);
+        rect.left(rect.left() + direction.x() * (1.0 - remained_length));
+        rect.right(rect.right() + direction.x() * (1.0 - remained_length));
+        rect.top(rect.top() + direction.y() * (1.0 - remained_length));
+        rect.bottom(rect.bottom() + direction.y() * (1.0 - remained_length));
+
+        image.copy(id, rect);
     }
 
-    image.copy( State::OBJECT_IMAGE_FLOOR,
-                Parent::point(),
-                size,
-                vram);
-
-    image.copy_alpha_blend( State::OBJECT_IMAGE_CROSS_STORM,
-                            explode_event_->get_alpha(),
-                            Parent::point(),
-                            size,
-                            vram);
+    image.copy(State::OBJECT_IMAGE_FLOOR, Parent::point());
+    image.copy(State::OBJECT_IMAGE_CROSS_STORM, Parent::point());
 }
 
 bool Bomb::is_exploding() const

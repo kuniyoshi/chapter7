@@ -28,11 +28,7 @@ void Item::draw(const Image::Sprite& image, const Map& map)
         return;
     }
 
-    GameLib::Framework f = GameLib::Framework::instance();
-    Size size(f.width(), f.height());
-    unsigned* vram = f.videoMemory();
-
-    image.copy_alpha_blend(id_, Parent::point(), size, vram);
+    image.copy(id_, Parent::point());
 }
 
 void Item::give(Object::Player* player)

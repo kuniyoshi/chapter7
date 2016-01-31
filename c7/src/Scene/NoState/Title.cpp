@@ -1,9 +1,10 @@
 #include "Scene/NoState/Title.h"
 #include "GameLib/Framework.h"
-#include "Controller/NoState.h"
-#include "Controller/Game.h"
-#include "Iterator/Loop.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Controller/NoState.h"
+#include "Game/InputManager.h"
+#include "Iterator/Loop.h"
 
 namespace Scene
 {
@@ -34,21 +35,21 @@ void Title::update( Controller::NoState::SceneName* next_scene_name,
 
     GameLib::Framework f = GameLib::Framework::instance();
 
-    if (f.isKeyTriggered(' '))
+    ::Game::InputManager user1_input = ::Game::InputManager::user1();
+
+    if (user1_input.is_option())
     {
         *next_scene_name = Controller::NoState::SceneGame;
         *play_mode = modes[looped_index_];
     }
-    else if (f.isKeyTriggered('w'))
+    else if (user1_input.is_top_triggered())
     {
         ++looped_index_;
     }
-    else if (f.isKeyTriggered('z'))
+    else if (user1_input.is_bottom_triggered())
     {
         --looped_index_;
     }
-
-    draw_background_image();
 
     f.drawDebugString(0, 0, "[TITLE]", 0xffffffff);
     f.drawDebugString(1, 1, "1P Mode", 0xffffffff);

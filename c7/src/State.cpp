@@ -4,10 +4,11 @@
 #include "GameLib/Framework.h"
 #include "Constants.h"
 #include "File.h"
-#include "Game/Map.h"
 #include "Game/Container/Bomb.h"
 #include "Game/Container/Item.h"
 #include "Game/Container/Wall.h"
+#include "Game/InputManager.h"
+#include "Game/Map.h"
 #include "Game/Object/Enemy.h"
 #include "Game/Object/Player.h"
 #include "Image/Sprite.h"
@@ -257,22 +258,24 @@ void State::update()
     walls_->clean_up_all_garbage(map_);
     items_->clean_up_all_garbage();
 
+    Game::InputManager player1_input = Game::InputManager::user1();
+
     Point player1p_point = player1p_->point();
     Point player1p_direction(0, 0);
 
-    if (f.isKeyOn('A') && !map_->can_not_invade(Point(player1p_point, -1, 0)))
+    if (player1_input.is_left() && !map_->can_not_invade(Point(player1p_point, -1, 0)))
     {
         player1p_direction.set_xy(-1, 0);
     }
-    else if (f.isKeyOn('S') && !map_->can_not_invade(Point(player1p_point, 1, 0)))
+    else if (player1_input.is_right() && !map_->can_not_invade(Point(player1p_point, 1, 0)))
     {
         player1p_direction.set_xy(1, 0);
     }
-    else if (f.isKeyOn('W') && !map_->can_not_invade(Point(player1p_point, 0, -1)))
+    else if (player1_input.is_top() && !map_->can_not_invade(Point(player1p_point, 0, -1)))
     {
         player1p_direction.set_xy(0, -1);
     }
-    else if (f.isKeyOn('Z') && !map_->can_not_invade(Point(player1p_point, 0, 1)))
+    else if (player1_input.is_bottom() && !map_->can_not_invade(Point(player1p_point, 0, 1)))
     {
         player1p_direction.set_xy(0, 1);
     }
@@ -284,19 +287,21 @@ void State::update()
         Point player2p_point = player2p_->point();
         Point player2p_direction(0, 0);
 
-        if (f.isKeyOn('H') && !map_->can_not_invade(Point(player2p_point, -1, 0)))
+        Game::InputManager player2_input = Game::InputManager::user2();
+
+        if (player2_input.is_left_triggered() && !map_->can_not_invade(Point(player2p_point, -1, 0)))
         {
             player2p_direction.set_xy(-1, 0);
         }
-        else if (f.isKeyOn('J') && !map_->can_not_invade(Point(player2p_point, 0, 1)))
+        else if (player2_input.is_right_triggered() && !map_->can_not_invade(Point(player2p_point, 0, 1)))
         {
             player2p_direction.set_xy(0, 1);
         }
-        else if (f.isKeyOn('K') && !map_->can_not_invade(Point(player2p_point, 0, -1)))
+        else if (player2_input.is_top_triggered() && !map_->can_not_invade(Point(player2p_point, 0, -1)))
         {
             player2p_direction.set_xy(0, -1);
         }
-        else if (f.isKeyOn('L') && !map_->can_not_invade(Point(player2p_point, 1, 0)))
+        else if (player2_input.is_bottom_triggered() && !map_->can_not_invade(Point(player2p_point, 1, 0)))
         {
             player2p_direction.set_xy(1, 0);
         }
@@ -304,12 +309,12 @@ void State::update()
         player2p_->move_to(player2p_direction, now);
     }
 
-    if (f.isKeyOn('F'))
+    if (player1_input.is_action_triggered())
     {
         player1p_->plant_a_bomb(now, bombs_, map_);
     }
 
-    if (player2p_ && f.isKeyOn('O'))
+    if (player2p_ && Game::InputManager::user2().is_action_triggered())
     {
         player2p_->plant_a_bomb(now, bombs_, map_);
     }

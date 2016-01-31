@@ -22,7 +22,6 @@ public:
 
 	void new_background_image(const char* filename);
 	void delete_background_image();
-	void draw_background_image() const;
 };
 
 } // namespace Scene

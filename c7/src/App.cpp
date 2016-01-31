@@ -1,19 +1,22 @@
 #include "App.h"
 #include "GameLib/GameLib.h"
-#include "Controller/NoState.h"
-#include "Controller/Game.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Controller/NoState.h"
+#include "Game/InputManager.h"
 
 App::App()
 : game_controller_(0), no_state_controller_(0)
 {
     no_state_controller_ = new Controller::NoState();
+    Game::InputManager::create();
 }
 
 App::~App()
 {
     SAFE_DELETE(game_controller_);
     SAFE_DELETE(no_state_controller_);
+    Game::InputManager::destroy();
 }
 
 void App::update()
@@ -55,4 +58,17 @@ void App::update()
     {
         HALT("Invalid controller found!");
     }
+}
+
+bool App::was_terminate_requested() const
+{
+    if (Game::InputManager::does_user1_exist() && Game::InputManager::user1().is_reset())
+    {
+        return true;
+    }
+    if (Game::InputManager::does_user2_exist() && Game::InputManager::user2().is_reset())
+    {
+        return true;
+    }
+    return false;
 }

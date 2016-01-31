@@ -1,8 +1,9 @@
 #include "Scene/NoState/GameOver.h"
 #include "GameLib/Framework.h"
-#include "Controller/NoState.h"
-#include "Controller/Game.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Controller/NoState.h"
+#include "Game/InputManager.h"
 
 namespace Scene
 {
@@ -28,14 +29,12 @@ Controller::NoState::SceneName GameOver::name() const { return Name_; }
 void GameOver::update(  Controller::NoState::SceneName* next_scene_name,
                         Constants::PlayMode*)
 {
-    if (GameLib::Framework::instance().isKeyTriggered(' '))
+    if (::Game::InputManager::user1().is_option())
     {
         *next_scene_name = Controller::NoState::SceneTitle;
     }
     
     GameLib::Framework::instance().drawDebugString(0, 0, "[GAME OVER]", 0xffffffff);
-
-    draw_background_image();
 }
 
 } // namespace NoState

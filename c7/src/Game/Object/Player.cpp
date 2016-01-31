@@ -188,27 +188,15 @@ void Player::draw(const Image::Sprite& image)  const
         return;
     }
 
-    GameLib::Framework f = GameLib::Framework::instance();
-    Size size = Size(f.width(), f.height());
-    unsigned* vram = f.videoMemory();
-
-    double alpha = dying_event_ ? dying_event_->completion_rate() : -1.0;
-
     if (!move_event_)
     {
-        image.copy_alpha_blend( get_object_image_id(player_index_),
-                                alpha,
-                                Parent::point(),
-                                size,
-                                vram);
+        image.copy(get_object_image_id(player_index_), Parent::point());
         return;
     }
 
-    image.copy_alpha_blend( get_object_image_id(player_index_),
-                            alpha,
-                            *move_event_,
-                            size,
-                            vram);
+    Rect< double > rect = move_event_->make_rect();
+
+    image.copy(get_object_image_id(player_index_), rect.left(), rect.top());
 }
 
 void Player::pause(unsigned now)

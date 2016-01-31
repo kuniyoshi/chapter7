@@ -26,6 +26,7 @@ public:
     App();
     ~App();
     void update();
+    bool was_terminate_requested() const;
 };
 
 #endif

@@ -173,27 +173,15 @@ void Enemy::draw(const Image::Sprite& image) const
         return;
     }
 
-    GameLib::Framework f = GameLib::Framework::instance();
-    Size size(f.width(), f.height());
-    unsigned* vram = f.videoMemory();
-
-    double alpha = dying_event_ ? dying_event_->completion_rate() : -1.0;
-
     if (!move_event_)
     {
-        image.copy_alpha_blend( State::OBJECT_IMAGE_ENEMY,
-                                alpha,
-                                Parent::point(),
-                                size,
-                                vram);
+        image.copy(State::OBJECT_IMAGE_ENEMY, Parent::point());
         return;
     }
 
-    image.copy_alpha_blend( State::OBJECT_IMAGE_ENEMY,
-                            alpha,
-                            *move_event_,
-                            size,
-                            vram);
+    Rect< double > rect = move_event_->make_rect();
+
+    image.copy(State::OBJECT_IMAGE_ENEMY, rect.left(), rect.top());
 }
 
 Point Enemy::current_point() const

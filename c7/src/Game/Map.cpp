@@ -36,10 +36,6 @@ void Map::load()
 
 void Map::draw(const Image::Sprite& image) const
 {
-    GameLib::Framework f = GameLib::Framework::instance();
-    Size size(f.width(), f.height());
-    unsigned* vram = f.videoMemory();
-
     for (int y = 0; y < height_; ++y)
     {
         for (int x = 0; x < width_; ++x)
@@ -49,10 +45,7 @@ void Map::draw(const Image::Sprite& image) const
                 continue;
             }
 
-            image.copy( background_cells_(x, y),
-                        Point(x, y),
-                        size,
-                        vram);
+            image.copy(background_cells_(x, y), Point(x, y));
         }
     }
 }

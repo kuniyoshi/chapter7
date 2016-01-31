@@ -22,7 +22,7 @@ namespace GameLib
 
 		gApp->update();
 
-		if (isKeyOn('T'))
+		if (gApp->was_terminate_requested())
 		{
 			requestEnd();
 		}

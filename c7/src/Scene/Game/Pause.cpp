@@ -1,9 +1,10 @@
 #include "Scene/Game/Pause.h"
 #include "GameLib/Framework.h"
-#include "Controller/Game.h"
-#include "State.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Game/InputManager.h"
 #include "Iterator/Loop.h"
+#include "State.h"
 
 namespace Scene
 {
@@ -33,11 +34,13 @@ void Pause::update(State* state, Controller::Game::SceneName* next_scene_name)
     GameLib::Framework f = GameLib::Framework::instance();
     f.drawDebugString(0, 0, "Pausing...", 0xffffffff);
 
-    if (f.isKeyTriggered('w'))
+    ::Game::InputManager user_input = ::Game::InputManager::user1();
+
+    if (user_input.is_top_triggered())
     {
         --looped_index_;
     }
-    else if (f.isKeyTriggered('z'))
+    else if (user_input.is_bottom_triggered())
     {
         ++looped_index_;
     }
@@ -47,7 +50,7 @@ void Pause::update(State* state, Controller::Game::SceneName* next_scene_name)
     f.drawDebugString(1, 6, "Go back to Play", 0xff000000);
     f.drawDebugString(0, looped_index_ + 5, ">", 0xff000000);
 
-    if (f.isKeyTriggered(' '))
+    if (user_input.is_option_triggered())
     {
         *next_scene_name = next_candidates[looped_index_];
 

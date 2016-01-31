@@ -2,21 +2,11 @@
 #define BAKUDAN_IMAGE_SPRITE_H_
 #include "Rect.h"
 
-class Size;
 class File;
 class Point;
-
-namespace Game
-{
-
-namespace Event
-{
-
-class Move;
-
-} // namespace Event
-
-} // namespace Game
+class Size;
+namespace Game { namespace Event { class Move; } }
+namespace GameLib { class Texture; }
 
 namespace Image
 {
@@ -29,6 +19,8 @@ private:
     const unsigned* data_;
     const int cells_per_column_;
     const int cells_per_row_;
+    GameLib::Texture* texture_;
+    const Size* texture_size_;
 
 public:
     Sprite(const File& image_file, int column_count, int row_count);
@@ -37,6 +29,9 @@ public:
     const Size& cell_size() const;
     const unsigned* data() const;
     int cells_per_column() const;
+    void copy(int cell_index, const Rect< double >& rect) const;
+    void copy(int cell_index, const Point& point) const;
+    void copy(int cell_index, double left, double top) const;
     void copy(  int cell_index,
                 const Point& point,
                 const Size& size,

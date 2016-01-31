@@ -2,6 +2,7 @@
 #define BAKUDAN_GAME_EVENT_MOVE_H_
 #include "Game/Event/Parent.h"
 #include "Point.h"
+#include "Rect.h"
 
 namespace Game
 {
@@ -36,6 +37,7 @@ public:
 	int dy() const;
 	bool can_reverse_by(const Point& new_direction) const;
 	void reverse();
+	Rect< double > make_rect() const;
 };
 
 } // namespace Event

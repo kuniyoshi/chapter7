@@ -1,8 +1,9 @@
 #include "Scene/Game/Success.h"
 #include "GameLib/Framework.h"
-#include "Controller/Game.h"
-#include "State.h"
 #include "Constants.h"
+#include "Controller/Game.h"
+#include "Game/InputManager.h"
+#include "State.h"
 
 namespace Scene
 {
@@ -27,8 +28,9 @@ Controller::Game::SceneName Success::name() const { return Name_; }
 void Success::update(State* state, Controller::Game::SceneName* next_scene_name)
 {
     GameLib::Framework f = GameLib::Framework::instance();
+    ::Game::InputManager user1_input = ::Game::InputManager::user1();
 
-    if (f.isKeyTriggered(' '))
+    if (user1_input.is_option())
     {
         *next_scene_name = Controller::Game::SceneNoStateEnding;
     }
