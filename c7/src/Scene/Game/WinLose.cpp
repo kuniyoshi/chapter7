@@ -26,16 +26,16 @@ Controller::Game::SceneName WinLose::name() const { return Name_; }
 
 void WinLose::update(State* state, Controller::Game::SceneName* next_scene_name)
 {
-	GameLib::Framework f = GameLib::Framework::instance();
+    GameLib::Framework f = GameLib::Framework::instance();
 
-	if (f.isKeyTriggered(' '))
-	{
-		*next_scene_name = Controller::Game::SceneNoStateTitle;
-	}
+    if (f.isKeyTriggered(' '))
+    {
+        *next_scene_name = Controller::Game::SceneNoStateTitle;
+    }
 
-	f.drawDebugString(0, 0, "win lose", 0xffffffff);
-	
-	state->draw();
+    f.drawDebugString(0, 0, "win lose", 0xffffffff);
+    
+    state->draw();
 }
 
 } // namespace Game
