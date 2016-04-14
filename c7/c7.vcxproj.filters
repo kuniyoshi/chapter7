@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル\data">
+      <UniqueIdentifier>{8646c6f5-db4c-417d-abe0-8d1d85a627bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\data\image">
+      <UniqueIdentifier>{280f1bb3-627e-4c3c-b2f6-35a2c2093e2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Controller">
+      <UniqueIdentifier>{9c58d953-380a-4bbb-873e-d0c018d2f37e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Controller">
+      <UniqueIdentifier>{aa238706-3367-4112-8535-43d1bf56f70f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{730a5547-9f41-4ba1-b696-f78ea5236b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{7226d8e5-93a3-4e97-a34e-7d5177d7e1db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\NoState">
+      <UniqueIdentifier>{5c5fb41c-d151-4302-b360-44c3d6060cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\NoState">
+      <UniqueIdentifier>{cf67c283-11b3-4192-870d-88a31dc49f91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Game">
+      <UniqueIdentifier>{b483ad2c-c458-41c3-99f5-819ba4f737a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Game">
+      <UniqueIdentifier>{d635b968-6450-448b-9df3-5221b50900ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Iterator">
+      <UniqueIdentifier>{edbc6f57-7a2c-4757-9b51-76334ea4403a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Iterator">
+      <UniqueIdentifier>{8994a2ee-8865-43af-b9c2-fbb46eea27cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Image">
+      <UniqueIdentifier>{a7828702-d4b8-4203-ad89-0f38ab0d9577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Image">
+      <UniqueIdentifier>{83c56b5b-b538-4f23-aece-0b9c15109ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game">
+      <UniqueIdentifier>{c4845619-92a3-424e-9bc7-e76ce130d872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game">
+      <UniqueIdentifier>{dc879ab1-d1b0-471b-9210-7075c836658c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\data\image\game">
+      <UniqueIdentifier>{9d0878f4-bde4-42d3-95dd-a28f7e0500e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object">
+      <UniqueIdentifier>{061e9064-b1f6-4cdf-a72f-a0892b77f26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Event">
+      <UniqueIdentifier>{3be3af3b-e132-40d4-b516-f43b7cc89dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Object">
+      <UniqueIdentifier>{a1b1bbe7-dce7-4aed-901e-2d4233e1202e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Event">
+      <UniqueIdentifier>{cd346e23-9897-47b0-a9fa-1a6afd2d9fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Ai">
+      <UniqueIdentifier>{40ad2c21-5f3d-4e00-b56e-7bb1e6a1d7ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Ai">
+      <UniqueIdentifier>{97a43e2c-8279-4c60-bc2e-567079078762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Container">
+      <UniqueIdentifier>{cb892e75-9ce9-4e12-9076-af136fed6993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Container">
+      <UniqueIdentifier>{88c769ad-40ac-496d-b88f-374669320c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Input">
+      <UniqueIdentifier>{197c7831-f779-4656-9daf-c066509638ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Game\Input">
+      <UniqueIdentifier>{8d1afb80-878e-4b4e-ba1b-9897f833ef4c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="data\image\dummy.dds">
+      <Filter>リソース ファイル\data\image</Filter>
+    </Image>
+    <Image Include="data\image\BakudanBitoImage.dds">
+      <Filter>リソース ファイル\data\image</Filter>
+    </Image>
+    <Image Include="data\image\ending.dds">
+      <Filter>リソース ファイル\data\image</Filter>
+    </Image>
+    <Image Include="data\image\title.dds">
+      <Filter>リソース ファイル\data\image</Filter>
+    </Image>
+    <Image Include="data\image\game_over.dds">
+      <Filter>リソース ファイル\data\image</Filter>
+    </Image>
+    <Image Include="data\image\game\load.dds">
+      <Filter>リソース ファイル\data\image\game</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Array2D.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\File.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Point.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\State.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Size.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\Game.h">
+      <Filter>ヘッダー ファイル\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\NoState.h">
+      <Filter>ヘッダー ファイル\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\Parent.h">
+      <Filter>ヘッダー ファイル\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Parent.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\NoState\Ending.h">
+      <Filter>ヘッダー ファイル\Scene\NoState</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\NoState\GameOver.h">
+      <Filter>ヘッダー ファイル\Scene\NoState</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\NoState\Parent.h">
+      <Filter>ヘッダー ファイル\Scene\NoState</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\NoState\Title.h">
+      <Filter>ヘッダー ファイル\Scene\NoState</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\Failure.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\Load.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\Parent.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\Pause.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\Play.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\Success.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Game\WinLose.h">
+      <Filter>ヘッダー ファイル\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Iterator\Image.h">
+      <Filter>ヘッダー ファイル\Iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Iterator\Loop.h">
+      <Filter>ヘッダー ファイル\Iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Image\Dds.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Image\functions.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Image\Sprite.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Constants.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Map.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Object\Parent.h">
+      <Filter>ヘッダー ファイル\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Object\Player.h">
+      <Filter>ヘッダー ファイル\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Event\Parent.h">
+      <Filter>ヘッダー ファイル\Game\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Event\Move.h">
+      <Filter>ヘッダー ファイル\Game\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Piece.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rect.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collision.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Event\Eat.h">
+      <Filter>ヘッダー ファイル\Game\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Event\Dying.h">
+      <Filter>ヘッダー ファイル\Game\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Object\Enemy.h">
+      <Filter>ヘッダー ファイル\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Ai\RuleBase.h">
+      <Filter>ヘッダー ファイル\Game\Ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Container\Bomb.h">
+      <Filter>ヘッダー ファイル\Game\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Container\Wall.h">
+      <Filter>ヘッダー ファイル\Game\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Event\Burn.h">
+      <Filter>ヘッダー ファイル\Game\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Event\Explode.h">
+      <Filter>ヘッダー ファイル\Game\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Object\Bomb.h">
+      <Filter>ヘッダー ファイル\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Object\Wall.h">
+      <Filter>ヘッダー ファイル\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Object\Item.h">
+      <Filter>ヘッダー ファイル\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Container\Item.h">
+      <Filter>ヘッダー ファイル\Game\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Input\Parent.h">
+      <Filter>ヘッダー ファイル\Game\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\Input\Keyboard.h">
+      <Filter>ヘッダー ファイル\Game\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game\InputManager.h">
+      <Filter>ヘッダー ファイル\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Array2D.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\File.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Point.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\State.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Size.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\Game.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\NoState.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\Parent.cpp">
+      <Filter>ソース ファイル\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Parent.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\NoState\Ending.cpp">
+      <Filter>ソース ファイル\Scene\NoState</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\NoState\GameOver.cpp">
+      <Filter>ソース ファイル\Scene\NoState</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\NoState\Parent.cpp">
+      <Filter>ソース ファイル\Scene\NoState</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\NoState\Title.cpp">
+      <Filter>ソース ファイル\Scene\NoState</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\Failure.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\Load.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\Parent.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\Pause.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\Play.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\Success.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Game\WinLose.cpp">
+      <Filter>ソース ファイル\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Iterator\Image.cpp">
+      <Filter>ソース ファイル\Iterator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Iterator\Loop.cpp">
+      <Filter>ソース ファイル\Iterator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Image\Dds.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Image\functions.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Image\Sprite.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Constants.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Map.cpp">
+      <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Object\Parent.cpp">
+      <Filter>ソース ファイル\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Object\Player.cpp">
+      <Filter>ソース ファイル\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Event\Move.cpp">
+      <Filter>ソース ファイル\Game\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Event\Parent.cpp">
+      <Filter>ソース ファイル\Game\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Piece.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rect.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collision.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Event\Eat.cpp">
+      <Filter>ソース ファイル\Game\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Event\Dying.cpp">
+      <Filter>ソース ファイル\Game\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Object\Enemy.cpp">
+      <Filter>ソース ファイル\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Ai\RuleBase.cpp">
+      <Filter>ソース ファイル\Game\Ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Container\Bomb.cpp">
+      <Filter>ソース ファイル\Game\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Container\Wall.cpp">
+      <Filter>ソース ファイル\Game\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Event\Burn.cpp">
+      <Filter>ソース ファイル\Game\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Event\Explode.cpp">
+      <Filter>ソース ファイル\Game\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Object\Bomb.cpp">
+      <Filter>ソース ファイル\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Object\Wall.cpp">
+      <Filter>ソース ファイル\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Container\Item.cpp">
+      <Filter>ソース ファイル\Game\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Object\Item.cpp">
+      <Filter>ソース ファイル\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\InputManager.cpp">
+      <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Input\Parent.cpp">
+      <Filter>ソース ファイル\Game\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Input\Keyboard.cpp">
+      <Filter>ソース ファイル\Game\Input</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

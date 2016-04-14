@@ -1,0 +1,4248 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"celsi",
+				"cell_size_"
+			],
+			[
+				"lef",
+				"left"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"cellsper",
+				"cells_per_column_"
+			],
+			[
+				"is_option",
+				"is_option_triggered	(Keyboard.h)"
+			],
+			[
+				"tex",
+				"texture_size_"
+			],
+			[
+				"righ",
+				"right"
+			],
+			[
+				"widh",
+				"width_index"
+			],
+			[
+				"cellsize",
+				"cell_size_"
+			],
+			[
+				"cell",
+				"cell_size_"
+			],
+			[
+				"Game",
+				"GameLib::Framework"
+			],
+			[
+				"gu",
+				"g_user2"
+			],
+			[
+				"user",
+				"user_input	(Pause.cpp)"
+			],
+			[
+				"get_",
+				"get_g_user"
+			],
+			[
+				"ist",
+				"is_top	(State.cpp)"
+			],
+			[
+				"user1",
+				"user1_input"
+			],
+			[
+				"Ipu",
+				"InputManager::user1	(App.cpp)"
+			],
+			[
+				"Input",
+				"InputManager"
+			],
+			[
+				"istest",
+				"is_test_input_game_failure	(InputManager.h)"
+			],
+			[
+				"Mana",
+				"Manager::instance"
+			],
+			[
+				"InputMa",
+				"InputManager::user2"
+			],
+			[
+				"player1in",
+				"player1_input"
+			],
+			[
+				"Inpu",
+				"InputManager::user1"
+			],
+			[
+				"doesuser",
+				"does_user1_exist	(InputManager.h)"
+			],
+			[
+				"does_user",
+				"does_user1_exist	(InputManager.h)"
+			],
+			[
+				"isre",
+				"is_reset	(App.cpp)"
+			],
+			[
+				"User",
+				"UserId1"
+			],
+			[
+				"inpu",
+				"input_	(InputManager.h)"
+			],
+			[
+				"userid",
+				"user_id"
+			],
+			[
+				"con",
+				"controller1"
+			],
+			[
+				"namep",
+				"namespace"
+			],
+			[
+				"users",
+				"users_controller1_	(App.cpp)"
+			],
+			[
+				"static",
+				"static_cast	(Keyboard.cpp)"
+			],
+			[
+				"ke",
+				"keys_"
+			],
+			[
+				"Com",
+				"CommandSize	(Parent.h)"
+			],
+			[
+				"in",
+				"inputs_"
+			],
+			[
+				"keo",
+				"keyboard"
+			],
+			[
+				"Ga",
+				"GameLib::Framework"
+			],
+			[
+				"reset",
+				"reset_key"
+			],
+			[
+				"rese",
+				"reset_key_	(Keyboard.h)"
+			],
+			[
+				"op",
+				"option_key"
+			],
+			[
+				"ac",
+				"action_key"
+			],
+			[
+				"bo",
+				"bottom_key"
+			],
+			[
+				"to",
+				"top_key"
+			],
+			[
+				"ri",
+				"right_key"
+			],
+			[
+				"act",
+				"action_key	(Keyboard.h)"
+			],
+			[
+				"left",
+				"left_key	(Keyboard.h)"
+			],
+			[
+				"isac",
+				"is_action_"
+			],
+			[
+				"isle",
+				"is_left_"
+			],
+			[
+				"Ima",
+				"Image::Sprite"
+			],
+			[
+				"GAme",
+				"GameLib"
+			],
+			[
+				"begi",
+				"begin"
+			],
+			[
+				"Ob",
+				"Object::Item"
+			],
+			[
+				"maxb",
+				"max_bombs_"
+			],
+			[
+				"maxbo",
+				"max_bombs	(State.cpp)"
+			],
+			[
+				"pow",
+				"power_"
+			],
+			[
+				"po",
+				"power	(Item.cpp)"
+			],
+			[
+				"maxbom",
+				"max_bombs	(State.cpp)"
+			],
+			[
+				"be",
+				"begin"
+			],
+			[
+				"O",
+				"Object::Item"
+			],
+			[
+				"pla",
+				"player	(Item.h)"
+			],
+			[
+				"Objec",
+				"Object::Item	(Item.h)"
+			],
+			[
+				"Con",
+				"Container::Item	(Player.h)"
+			],
+			[
+				"GA",
+				"GameLib::Framework"
+			],
+			[
+				"Obje",
+				"Object::Wall	(Item.h)"
+			],
+			[
+				"Contai",
+				"Container::Wall"
+			],
+			[
+				"I",
+				"Image::Sprite	(State.h)"
+			],
+			[
+				"ite",
+				"iterator"
+			],
+			[
+				"power",
+				"power_count"
+			],
+			[
+				"OBITE",
+				"OBJECT_IMAGE_BOMB_ITEM	(State.h)"
+			],
+			[
+				"Object",
+				"Object::Item"
+			],
+			[
+				"randva",
+				"rand_values"
+			],
+			[
+				"wa",
+				"walls"
+			],
+			[
+				"wal",
+				"walls"
+			],
+			[
+				"powe",
+				"power_count"
+			],
+			[
+				"bobm",
+				"bomb_count"
+			],
+			[
+				"walls",
+				"walls_	(State.h)"
+			],
+			[
+				"vec",
+				"vector	(Item.h)"
+			],
+			[
+				"Conta",
+				"Container::Wall	(Item.h)"
+			],
+			[
+				"bomb",
+				"bomb_count	(Item.h)"
+			],
+			[
+				"pla2p",
+				"player2p_"
+			],
+			[
+				"map",
+				"map_"
+			],
+			[
+				"did",
+				"did_die"
+			],
+			[
+				"bu",
+				"burn_wall_to_map	(State.cpp)"
+			],
+			[
+				"OBIMB",
+				"OBJECT_IMAGE_BURNING_WALL	(State.h)"
+			],
+			[
+				"Fra",
+				"Framework"
+			],
+			[
+				"msex",
+				"MsExploding"
+			],
+			[
+				"Mswea",
+				"MsStatusWeaking"
+			],
+			[
+				"msstat",
+				"ms_statuses"
+			],
+			[
+				"MsStatus",
+				"MsStatusExploding"
+			],
+			[
+				"msstates",
+				"ms_statuses"
+			],
+			[
+				"msto",
+				"ms_to_transmitting"
+			],
+			[
+				"du",
+				"duration_"
+			],
+			[
+				"msexplod",
+				"ms_exploding"
+			],
+			[
+				"dura",
+				"duration"
+			],
+			[
+				"msstatu",
+				"ms_statuses"
+			],
+			[
+				"curr",
+				"current_length"
+			],
+			[
+				"msstatues",
+				"ms_statuses_"
+			],
+			[
+				"for",
+				"foreground_cells_"
+			],
+			[
+				"unb",
+				"unbiased_y"
+			],
+			[
+				"re",
+				"rect_"
+			],
+			[
+				"getcu",
+				"get_current_x_offset"
+			],
+			[
+				"Constan",
+				"Constants::DirectionName"
+			],
+			[
+				"explosio",
+				"explosion_length"
+			],
+			[
+				"mstocop",
+				"ms_to_completion_"
+			],
+			[
+				"didcom",
+				"did_complete	(Enemy.cpp)"
+			],
+			[
+				"mstocomp",
+				"ms_to_completion"
+			],
+			[
+				"Image",
+				"Image::Sprite	(State.h)"
+			],
+			[
+				"ms_to",
+				"ms_to_completion	(Enemy.h)"
+			],
+			[
+				"Explod",
+				"Explode::length"
+			],
+			[
+				"Consta",
+				"Constants::DirectionName"
+			],
+			[
+				"rea",
+				"reached_length"
+			],
+			[
+				"ex",
+				"expldoe	(Explode.h)"
+			],
+			[
+				"max",
+				"max_point"
+			],
+			[
+				"Const",
+				"Constants::DirectionName"
+			],
+			[
+				"maxpo",
+				"max_point	(Bomb.cpp)"
+			],
+			[
+				"std",
+				"std::pair"
+			],
+			[
+				"ve",
+				"vector	std::vector"
+			],
+			[
+				"new",
+				"new_value	(Player.h)"
+			],
+			[
+				"Ms",
+				"MsToCompleteBurningWall"
+			],
+			[
+				"bur",
+				"burn_one"
+			],
+			[
+				"Cons",
+				"Constants::DirectionNameSize"
+			],
+			[
+				"burn",
+				"burn_out_walls_if_in_explosion"
+			],
+			[
+				"cen",
+				"central_"
+			],
+			[
+				"cent",
+				"cental_	(Bomb.cpp)"
+			],
+			[
+				"OBJECT_IMAGE_",
+				"OBJECT_IMAGE_BOMB	(State.h)"
+			],
+			[
+				"ver",
+				"vertical_"
+			],
+			[
+				"le",
+				"left"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/main.cpp",
+			"settings":
+			{
+				"buffer_size": 440,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.h",
+			"settings":
+			{
+				"buffer_size": 435,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.cpp",
+			"settings":
+			{
+				"buffer_size": 1856,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/State.h",
+			"settings":
+			{
+				"buffer_size": 1499,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/State.cpp",
+			"settings":
+			{
+				"buffer_size": 13004,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Input/Parent.h",
+			"settings":
+			{
+				"buffer_size": 837,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Parent.cpp",
+			"settings":
+			{
+				"buffer_size": 416,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Parent.h",
+			"settings":
+			{
+				"buffer_size": 339,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Game/Load.cpp",
+			"settings":
+			{
+				"buffer_size": 903,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Input/Parent.cpp",
+			"settings":
+			{
+				"buffer_size": 966,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Input/Keyboard.h",
+			"settings":
+			{
+				"buffer_size": 970,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Input/Keyboard.cpp",
+			"settings":
+			{
+				"buffer_size": 1946,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/InputManager.h",
+			"settings":
+			{
+				"buffer_size": 1162,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/InputManager.cpp",
+			"settings":
+			{
+				"buffer_size": 2869,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Game/Failure.cpp",
+			"settings":
+			{
+				"buffer_size": 984,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Game/Pause.cpp",
+			"settings":
+			{
+				"buffer_size": 1660,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/NoState/Title.cpp",
+			"settings":
+			{
+				"buffer_size": 1491,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Game/WinLose.cpp",
+			"settings":
+			{
+				"buffer_size": 960,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Game/Success.cpp",
+			"settings":
+			{
+				"buffer_size": 958,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/Game/Play.cpp",
+			"settings":
+			{
+				"buffer_size": 1668,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/NoState/Ending.cpp",
+			"settings":
+			{
+				"buffer_size": 1077,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Scene/NoState/GameOver.cpp",
+			"settings":
+			{
+				"buffer_size": 908,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Container/Item.h",
+			"settings":
+			{
+				"buffer_size": 723,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Container/Item.cpp",
+			"settings":
+			{
+				"buffer_size": 2663,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Item.h",
+			"settings":
+			{
+				"buffer_size": 768,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Item.cpp",
+			"settings":
+			{
+				"buffer_size": 1086,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Parent.cpp",
+			"settings":
+			{
+				"buffer_size": 515,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Enemy.h",
+			"settings":
+			{
+				"buffer_size": 2276,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Enemy.cpp",
+			"settings":
+			{
+				"buffer_size": 10201,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Ai/RuleBase.h",
+			"settings":
+			{
+				"buffer_size": 961,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Ai/RuleBase.cpp",
+			"settings":
+			{
+				"buffer_size": 3335,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Dying.h",
+			"settings":
+			{
+				"buffer_size": 427,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Dying.cpp",
+			"settings":
+			{
+				"buffer_size": 639,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Eat.h",
+			"settings":
+			{
+				"buffer_size": 452,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Eat.cpp",
+			"settings":
+			{
+				"buffer_size": 482,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Player.h",
+			"settings":
+			{
+				"buffer_size": 1987,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Player.cpp",
+			"settings":
+			{
+				"buffer_size": 6097,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Container/Bomb.h",
+			"settings":
+			{
+				"buffer_size": 1701,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Container/Bomb.cpp",
+			"settings":
+			{
+				"buffer_size": 7035,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Bomb.h",
+			"settings":
+			{
+				"buffer_size": 1338,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Bomb.cpp",
+			"settings":
+			{
+				"buffer_size": 6397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Explode.h",
+			"settings":
+			{
+				"buffer_size": 951,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Explode.cpp",
+			"settings":
+			{
+				"buffer_size": 8702,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Container/Wall.h",
+			"settings":
+			{
+				"buffer_size": 877,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Container/Wall.cpp",
+			"settings":
+			{
+				"buffer_size": 4393,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Wall.h",
+			"settings":
+			{
+				"buffer_size": 646,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Object/Wall.cpp",
+			"settings":
+			{
+				"buffer_size": 1191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Burn.h",
+			"settings":
+			{
+				"buffer_size": 502,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Burn.cpp",
+			"settings":
+			{
+				"buffer_size": 1108,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Piece.h",
+			"settings":
+			{
+				"buffer_size": 1161,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Piece.cpp",
+			"settings":
+			{
+				"buffer_size": 4947,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/collision.h",
+			"settings":
+			{
+				"buffer_size": 208,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/collision.cpp",
+			"settings":
+			{
+				"buffer_size": 7358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Rect.h",
+			"settings":
+			{
+				"buffer_size": 473,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Rect.cpp",
+			"settings":
+			{
+				"buffer_size": 1671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Move.h",
+			"settings":
+			{
+				"buffer_size": 936,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Event/Move.cpp",
+			"settings":
+			{
+				"buffer_size": 2422,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Image/Sprite.h",
+			"settings":
+			{
+				"buffer_size": 2182,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Image/Sprite.cpp",
+			"settings":
+			{
+				"buffer_size": 12003,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Image/functions.h",
+			"settings":
+			{
+				"buffer_size": 410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Image/functions.cpp",
+			"settings":
+			{
+				"buffer_size": 1654,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Iterator/Image.cpp",
+			"settings":
+			{
+				"buffer_size": 909,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Iterator/Loop.h",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Iterator/Loop.cpp",
+			"settings":
+			{
+				"buffer_size": 950,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Iterator/Image.h",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Point.h",
+			"settings":
+			{
+				"buffer_size": 644,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Point.cpp",
+			"settings":
+			{
+				"buffer_size": 1220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Map.h",
+			"settings":
+			{
+				"buffer_size": 864,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Game/Map.cpp",
+			"settings":
+			{
+				"buffer_size": 2845,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Constants.h",
+			"settings":
+			{
+				"buffer_size": 462,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Constants.cpp",
+			"settings":
+			{
+				"buffer_size": 415,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/clang++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/clang++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 207.0,
+		"last_filter": "spaces",
+		"selected_items":
+		[
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"diff",
+				"Git: Diff All Files"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pipe",
+				"FilterPipes: Send Text to Command"
+			],
+			[
+				"parent",
+				"GitGutter: Compare Against Tag"
+			],
+			[
+				"filter",
+				"FilterPipes: Send Text to Command"
+			],
+			[
+				"git di",
+				"Git: Diff All Files"
+			],
+			[
+				"indention",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Namespace"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"sublime.log_commands(True)",
+			"sublime",
+			"True",
+			"sublime.log_commands(True)",
+			"a",
+			"sublime.log_commands(True)",
+			"sublime.log_commands = True",
+			"sublime.logs_commands = True",
+			"sublime.logs_commands(True)",
+			"sublime.logs_command(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.logCommand(True)",
+			"sublime.log_command(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"pwd",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/kouji/Public/win/c7/c7/src",
+		"/Users/kouji/Public/win/c7/c7/src/Game",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Container",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Event",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Object",
+		"/Users/kouji/Public/win/c7/c7/src/Image",
+		"/Users/kouji/Public/win/c7/c7/src/Scene"
+	],
+	"file_history":
+	[
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/GameOver.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Play.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Pause.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Failure.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Success.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/Game.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/Game.h",
+		"/Users/kouji/Public/win/c7/c7/src/main.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Play.h",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/../Game/Container/Item.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/../Game/Container/Item.h",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Object/Parent.cpp",
+		"/Users/kouji/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Event/Explode.h",
+		"/Users/kouji/Library/Application Support/Sublime Text 3/Packages/Git/Git.sublime-settings",
+		"/Users/kouji/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/kouji/Public/win/c7/c7/src/Array2D.h",
+		"/Users/kouji/Public/win/c7/c7/src/Rect.h",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Object/Enemy.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Size.h",
+		"/Users/kouji/Public/win/c7/c7/src/RandomDouble.h",
+		"/Users/kouji/Public/win/c7/c7/src/RandomDouble.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Object/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Law.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Law.h",
+		"/Users/kouji/Public/win/c7/c7/src/Game/ObjectId.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/Title.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/Title.h",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Event/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Event/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Array2D.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Interval/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Interval/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Shape/Segment.h",
+		"/Users/kouji/Public/win/c7/c7/src/Range/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Range/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Iterator/Loop.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Iterator/Loop.h",
+		"/Users/kouji/Public/win/c7/c7/src/Iterator/Image.h",
+		"/Users/kouji/Public/win/c7/c7/src/Iterator/Image.cpp",
+		"/Users/kouji/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/kouji/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/../../Game/Law.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Image/functions.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Image/functions.h",
+		"/Users/kouji/Public/win/c7/c7/src/Image/Sprite.h",
+		"/Users/kouji/Public/win/c7/c7/src/Image/Sprite.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Image/Dds.h",
+		"/Users/kouji/Public/win/c7/c7/src/Image/Dds.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/File.h",
+		"/Users/kouji/Public/win/c7/c7/src/File.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/WinLose.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/WinLose.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Failure.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Success.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Pause.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Load.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/Game/Load.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/NoState.h",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/NoState.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/Parent.h",
+		"/Users/kouji/Public/win/c7/c7/src/Controller/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/App.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Size.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Point.h",
+		"/Users/kouji/Public/win/c7/c7/src/Point.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/App.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/GameOver.h",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/Ending.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Scene/NoState/Ending.h",
+		"/Users/kouji/Public/win/c7/c7/src/Map.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Image.h",
+		"/Users/kouji/Public/win/c7/c7/src/Dds.h",
+		"/Users/kouji/Public/win/c7/c7/src/Title.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Title.h",
+		"/Users/kouji/Public/win/c7/c7/src/Game/Animation.h",
+		"/Users/kouji/Public/win/c7/c7/src/Image/Parent.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Dds.cpp",
+		"/Users/kouji/Public/win/c7/c7/src/Image/Parent.h",
+		"/Users/kouji/Library/Application Support/Sublime Text 3/Packages/User/namespace.sublime-snippet",
+		"/Users/kouji/Public/win/c7/c7/src/State.h",
+		"/Users/kouji/Public/win/c7/c7/src/State.cpp",
+		"/Users/kouji/Public/win/c5/c5/src/FontRender.h",
+		"/Users/kouji/Public/win/c5/c5/Map.h",
+		"/Users/kouji/Public/win/c5/c5/Image.cpp",
+		"/Users/kouji/Public/win/c5/c5/Menu.cpp",
+		"/Users/kouji/Public/win/c5/c5/Menu.h",
+		"/Users/kouji/Public/win/c5/c5/Cleared.cpp",
+		"/Users/kouji/Public/win/c5/c5/Cleared.h",
+		"/Users/kouji/Public/win/c5/c5/Game.cpp",
+		"/Users/kouji/Public/win/c5/c5/Game.h",
+		"/Users/kouji/Public/win/c5/c5/Loading.cpp",
+		"/Users/kouji/Public/win/c5/c5/Loading.h",
+		"/Users/kouji/Public/win/c5/c5/Input.cpp",
+		"/Users/kouji/Public/win/c5/c5/Input.h",
+		"/Users/kouji/Public/win/c5/c5/StageSelect.cpp",
+		"/Users/kouji/Public/win/c5/c5/main.cpp",
+		"/Users/kouji/Public/win/c5/c5/State.h",
+		"/Users/kouji/Public/win/c5/c5/State.cpp",
+		"/Users/kouji/Public/win/c5/c5/Scene.h",
+		"/Users/kouji/Public/win/c5/c5/Scene.cpp",
+		"/Users/kouji/Public/win/c5/c5/Title.h",
+		"/Users/kouji/Public/win/c5/c5/Title.cpp",
+		"/Users/kouji/Public/win/c5/c5/File.cpp",
+		"/Users/kouji/Public/win/c5/c5/File.h",
+		"/Users/kouji/Public/win/c5/c5/StageSelect.h",
+		"/Users/kouji/Public/win/c5/c5/Dds.h",
+		"/Users/kouji/Public/win/c5/c5/Dds.cpp",
+		"/Users/kouji/Public/win/c5/c5/data/image/menu.dds",
+		"/Users/kouji/Public/win/c5/c5/Image.h",
+		"/Users/kouji/Public/win/c5/c5/title.dds",
+		"/Users/kouji/Public/win/c4/c4/Array2D.cpp",
+		"/Users/kouji/Public/win/c4/c4/Array2D.h",
+		"/Users/kouji/Public/win/c4/c4/Object.cpp",
+		"/Users/kouji/Public/win/c4/c4/Object.h",
+		"/Users/kouji/Public/win/c4/c4/Point.h",
+		"/Users/kouji/Public/win/c4/c4/Point.cpp",
+		"/Users/kouji/Public/win/c4/c4/MovableObject.h",
+		"/Users/kouji/Public/win/c4/c4/MovableObject.cpp",
+		"/Users/kouji/Public/win/c4/c4/Animation.h",
+		"/Users/kouji/Public/win/c4/c4/File.cpp",
+		"/Users/kouji/Public/win/c4/c4/File.h"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"_triggered",
+			"top",
+			"right",
+			"left",
+			"top",
+			"right",
+			"left",
+			"make_piece",
+			"make_rect",
+			"draw",
+			"size_",
+			"cell_size_",
+			"is_left_triggered",
+			"left",
+			"isTriggered",
+			"cell_size_",
+			"texture_size_",
+			"sprite_size_",
+			"cell_size_",
+			"sprite_size_",
+			"\n    ",
+			"sprite_size_",
+			"texture_",
+			"videoMemory",
+			"draw",
+			"videoMemory",
+			"t3",
+			"2",
+			"0",
+			"double",
+			"videoMemory",
+			"draw_background_image",
+			"InputManager",
+			"draw_background_image",
+			"videoMemory",
+			"InputManager",
+			"Parent",
+			"isTriggered",
+			"UserId",
+			"InputManager",
+			"user_",
+			"private",
+			"input",
+			"InputManager",
+			"public",
+			"InputManager",
+			"user2",
+			"user1",
+			"InputManager",
+			"inputmanager",
+			"isKeyTriggered",
+			"Triggered",
+			"isTriggered",
+			"isKyeTriggered",
+			"isOn",
+			"player2_input",
+			"player1_input",
+			"player2_input_",
+			"player1_input_",
+			"update",
+			"isKey",
+			"isKeyOn",
+			"action",
+			"left",
+			"central",
+			"chain",
+			"iterator",
+			"power",
+			"power_",
+			"power",
+			"clean",
+			"items_",
+			"Container",
+			"int",
+			"walls_",
+			"eat",
+			"freeze_drawing_until_burn",
+			"burn_one",
+			"did_draw_first_time_",
+			"did_first_frame_",
+			"did_draw_first_time_",
+			"burn",
+			"burn_one",
+			"new",
+			"EnemyCount",
+			"make_pi",
+			"make_rect",
+			"point",
+			"central",
+			"new",
+			"did_die",
+			"is_pos_block",
+			"alpha",
+			"MsStatusIgniting",
+			"will_explode()",
+			"will_explode_",
+			"plant",
+			"chain",
+			"power",
+			"destination",
+			"create",
+			"ms_statuses_",
+			"reserve",
+			"plant",
+			"enemies",
+			"enemy",
+			"is_block",
+			"MapSizeWidth",
+			"map",
+			"place",
+			"enemy",
+			"place",
+			"wall",
+			"will_be",
+			"will_be_burned_after",
+			"walls_",
+			"map",
+			"make_rect",
+			"id",
+			"i",
+			"id",
+			"max_points_",
+			"is_wall",
+			"is_block",
+			"length",
+			"id",
+			"tick",
+			"player1_point"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"max_point",
+			"cental_",
+			"can_reverse_direction",
+			"OBJECT_IMAGE_BOMB_HORIZONTAL_STORM",
+			"		// address &= ~( HEAP_REGION_SIZE - 1 );\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 440,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 45,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/App.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 435,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 43,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/App.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1589,
+								1589
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 447.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 42,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/State.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 44,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/State.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7144,
+								7144
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Game/Input/Parent.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								782,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/Scene/Parent.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/Scene/Parent.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								306,
+								306
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/Scene/Game/Load.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								750,
+								750
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/Game/Input/Parent.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								914,
+								914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/Game/Input/Keyboard.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								896,
+								896
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/Game/Input/Keyboard.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1126,
+								1126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 309.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/Game/InputManager.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								789,
+								789
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/Game/InputManager.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								791,
+								791
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 366.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/Scene/Game/Failure.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 984,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								658,
+								658
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 41,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/Scene/Game/Pause.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1395,
+								1395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "src/Scene/NoState/Title.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1186,
+								1186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "src/Scene/Game/WinLose.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								726,
+								726
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "src/Scene/Game/Success.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								698,
+								698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 40,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "src/Scene/Game/Play.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1668,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "src/Scene/NoState/Ending.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								752,
+								752
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 37,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "src/Scene/NoState/GameOver.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								860,
+								860
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 38,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "src/Game/Container/Item.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								348,
+								348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "src/Game/Container/Item.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "src/Game/Object/Item.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 768,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339,
+								339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 34,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "src/Game/Object/Item.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								628,
+								628
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 67.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "src/Game/Object/Parent.cpp",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "src/Game/Object/Enemy.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2153,
+								2153
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 447.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 59,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "src/Game/Object/Enemy.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "src/Game/Ai/RuleBase.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 961,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 68,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "src/Game/Ai/RuleBase.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								864,
+								867
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 743.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 65,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "src/Game/Event/Dying.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 67,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "src/Game/Event/Dying.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 66,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "src/Game/Event/Eat.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 62,
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "src/Game/Event/Eat.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 47,
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "src/Game/Object/Player.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1987,
+								1987
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 333.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"file": "src/Game/Object/Player.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								533,
+								533
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 385.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 37,
+					"file": "src/Game/Container/Bomb.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1189,
+								1189
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 105.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "src/Game/Container/Bomb.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4376,
+								4376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3045.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"file": "src/Game/Object/Bomb.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								331,
+								331
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 40,
+					"file": "src/Game/Object/Bomb.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4220,
+								4220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3063.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 41,
+					"file": "src/Game/Event/Explode.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								262,
+								262
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 56,
+					"type": "text"
+				},
+				{
+					"buffer": 42,
+					"file": "src/Game/Event/Explode.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8702,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7127,
+								7127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5192.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 46,
+					"type": "text"
+				},
+				{
+					"buffer": 43,
+					"file": "src/Game/Container/Wall.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 877,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 44,
+					"file": "src/Game/Container/Wall.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								367
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 45,
+					"file": "src/Game/Object/Wall.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 46,
+					"file": "src/Game/Object/Wall.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								559,
+								559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 47,
+					"file": "src/Game/Event/Burn.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								93
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 49,
+					"type": "text"
+				},
+				{
+					"buffer": 48,
+					"file": "src/Game/Event/Burn.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								914,
+								914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 48,
+					"type": "text"
+				},
+				{
+					"buffer": 49,
+					"file": "src/Piece.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								94,
+								94
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 51,
+					"type": "text"
+				},
+				{
+					"buffer": 50,
+					"file": "src/Piece.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4947,
+								4947
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1891.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 50,
+					"type": "text"
+				},
+				{
+					"buffer": 51,
+					"file": "src/collision.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 64,
+					"type": "text"
+				},
+				{
+					"buffer": 52,
+					"file": "src/collision.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6663,
+								6663
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 63,
+					"type": "text"
+				},
+				{
+					"buffer": 53,
+					"file": "src/Rect.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 473,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								461,
+								461
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 53,
+					"type": "text"
+				},
+				{
+					"buffer": 54,
+					"file": "src/Rect.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1668,
+								1668
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 124.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 52,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
+					"file": "src/Game/Event/Move.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 936,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								862,
+								862
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 56,
+					"file": "src/Game/Event/Move.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 57,
+					"file": "src/Image/Sprite.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								858,
+								858
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 58,
+					"file": "src/Image/Sprite.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4348,
+								4348
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"wrap_width": 100
+						},
+						"translation.x": 0.0,
+						"translation.y": 1940.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 59,
+					"file": "src/Image/functions.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								43
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 58,
+					"type": "text"
+				},
+				{
+					"buffer": 60,
+					"file": "src/Image/functions.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1654,
+								1654
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 57,
+					"type": "text"
+				},
+				{
+					"buffer": 61,
+					"file": "src/Iterator/Image.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								115,
+								115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 62,
+					"file": "src/Iterator/Loop.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								326,
+								326
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 71,
+					"type": "text"
+				},
+				{
+					"buffer": 63,
+					"file": "src/Iterator/Loop.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 950,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								879,
+								879
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 219.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 69,
+					"type": "text"
+				},
+				{
+					"buffer": 64,
+					"file": "src/Iterator/Image.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								151,
+								151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 65,
+					"file": "src/Point.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 61,
+					"type": "text"
+				},
+				{
+					"buffer": 66,
+					"file": "src/Point.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 60,
+					"type": "text"
+				},
+				{
+					"buffer": 67,
+					"file": "src/Game/Map.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 68,
+					"file": "src/Game/Map.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2845,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 69,
+					"file": "src/Constants.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 462,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								354,
+								354
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 55,
+					"type": "text"
+				},
+				{
+					"buffer": 70,
+					"file": "src/Constants.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 54,
+					"type": "text"
+				},
+				{
+					"buffer": 58,
+					"file": "src/Image/Sprite.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10524,
+								10524
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 100
+						},
+						"translation.x": 0.0,
+						"translation.y": 3369.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 70,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 288.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "c7.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"enem",
+				"Game/Object/Enemy.cpp"
+			],
+			[
+				"spri",
+				"Image/Sprite.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 87.0,
+		"last_filter": "keyb",
+		"selected_items":
+		[
+			[
+				"keyb",
+				"Keyboard"
+			],
+			[
+				"state",
+				"State"
+			],
+			[
+				"player",
+				"Player"
+			],
+			[
+				"play",
+				"Play"
+			],
+			[
+				"pla",
+				"Player"
+			],
+			[
+				"move",
+				"Move"
+			],
+			[
+				"spri",
+				"Sprite"
+			],
+			[
+				"draw",
+				"draw"
+			],
+			[
+				"bomb",
+				"Bomb"
+			],
+			[
+				"map",
+				"Map"
+			],
+			[
+				"pause",
+				"Pause"
+			],
+			[
+				"mana",
+				"InputManager"
+			],
+			[
+				"par",
+				"Parent"
+			],
+			[
+				"image",
+				"Image"
+			],
+			[
+				"tit",
+				"Title"
+			],
+			[
+				"parent",
+				"Parent"
+			],
+			[
+				"item",
+				"Item"
+			],
+			[
+				"wall",
+				"Wall"
+			],
+			[
+				"Item",
+				"Item"
+			],
+			[
+				"enemy",
+				"Enemy"
+			],
+			[
+				"load",
+				"Load"
+			],
+			[
+				"endin",
+				"Ending"
+			],
+			[
+				"gameo",
+				"GameOver"
+			],
+			[
+				"game",
+				"Game"
+			],
+			[
+				"title",
+				"Title"
+			],
+			[
+				"manag",
+				"InputManager"
+			],
+			[
+				"input",
+				"InputManager"
+			],
+			[
+				"winl",
+				"WinLose"
+			],
+			[
+				"succ",
+				"Success"
+			],
+			[
+				"failure",
+				"Failure"
+			],
+			[
+				"key",
+				"Keyboard"
+			],
+			[
+				"in",
+				"InputManager"
+			],
+			[
+				"inputman",
+				"InputManager"
+			],
+			[
+				"app",
+				"App"
+			],
+			[
+				"inputma",
+				"InputManager"
+			],
+			[
+				"inputm",
+				"InputManager"
+			],
+			[
+				"inpu",
+				"InputManager"
+			],
+			[
+				"Gameo",
+				"GameOver"
+			],
+			[
+				"Endin",
+				"Ending"
+			],
+			[
+				"manager",
+				"InputManager"
+			],
+			[
+				"manage",
+				"InputManager"
+			],
+			[
+				"inputma	",
+				"InputManager"
+			],
+			[
+				"ap",
+				"App"
+			],
+			[
+				"Game",
+				"Game"
+			],
+			[
+				"container",
+				"BAKUDAN_GAME_CONTAINER_BOMB_H_"
+			],
+			[
+				"playe",
+				"Player"
+			],
+			[
+				"plaer",
+				"Player"
+			],
+			[
+				"copyal",
+				"copy_alpha_blend"
+			],
+			[
+				"paren",
+				"Parent"
+			],
+			[
+				"wal",
+				"Wall"
+			],
+			[
+				"exp",
+				"Explode"
+			],
+			[
+				"eat",
+				"Eat"
+			],
+			[
+				"enem",
+				"Enemy"
+			],
+			[
+				"wla",
+				"Wall"
+			],
+			[
+				"pie",
+				"Piece"
+			],
+			[
+				"rect",
+				"Rect"
+			],
+			[
+				"kill",
+				"kill_player_if_in_explosion"
+			],
+			[
+				"piece",
+				"Piece"
+			],
+			[
+				"sprit",
+				"Sprite"
+			],
+			[
+				"did_die",
+				"did_die"
+			],
+			[
+				"cons",
+				"Constants"
+			],
+			[
+				"constan",
+				"Constants"
+			],
+			[
+				"explo",
+				"Explode"
+			],
+			[
+				"function",
+				"BAKUDAN_IMAGE_FUNCTIONS_H_"
+			],
+			[
+				"status",
+				"compute_status"
+			],
+			[
+				"explode",
+				"Explode"
+			],
+			[
+				"pare",
+				"Parent"
+			],
+			[
+				"palnt",
+				"plant_a_bomb"
+			],
+			[
+				"const",
+				"Constants"
+			],
+			[
+				"burn",
+				"Burn"
+			],
+			[
+				"paret",
+				"Parent"
+			],
+			[
+				"stae",
+				"is_status_exploding"
+			],
+			[
+				"point",
+				"Point"
+			],
+			[
+				"pint",
+				"Point"
+			],
+			[
+				"expe",
+				"Explode"
+			],
+			[
+				"piont",
+				"Point"
+			],
+			[
+				"bom",
+				"Bomb"
+			],
+			[
+				"Stat",
+				"State"
+			],
+			[
+				"consta",
+				"Constants"
+			],
+			[
+				"bmob",
+				"Bomb"
+			],
+			[
+				"last",
+				"last_stamp"
+			],
+			[
+				"State",
+				"State"
+			],
+			[
+				"pece",
+				"Piece"
+			],
+			[
+				"piec",
+				"Piece"
+			],
+			[
+				"peice",
+				"Piece"
+			],
+			[
+				"func",
+				"BAKUDAN_IMAGE_FUNCTIONS_H_"
+			],
+			[
+				"ene",
+				"Enemy"
+			],
+			[
+				"rec",
+				"Rect"
+			],
+			[
+				"Point",
+				"Point"
+			],
+			[
+				"Parent",
+				"Parent"
+			],
+			[
+				"sprite",
+				"Sprite"
+			],
+			[
+				"Ene",
+				"Enemy"
+			],
+			[
+				"Enemy",
+				"Enemy"
+			],
+			[
+				"mvoe",
+				"Move"
+			],
+			[
+				"coll",
+				"set_ms_at_collision_occur"
+			],
+			[
+				"collision",
+				"set_ms_at_collision_occur"
+			],
+			[
+				"update",
+				"update"
+			],
+			[
+				"Player",
+				"Player"
+			],
+			[
+				"fun",
+				"BAKUDAN_IMAGE_FUNCTIONS_H_"
+			],
+			[
+				"failu",
+				"Failure"
+			],
+			[
+				"palyer",
+				"Player"
+			],
+			[
+				"dyin",
+				"Dying"
+			],
+			[
+				"dying",
+				"Dying"
+			],
+			[
+				"setupene",
+				"setup_enemies"
+			],
+			[
+				"plaey",
+				"Player"
+			],
+			[
+				"rule",
+				"RuleBase"
+			],
+			[
+				"",
+				"Array2D"
+			],
+			[
+				"functions",
+				"BAKUDAN_IMAGE_FUNCTIONS_H_"
+			],
+			[
+				"loop",
+				"Loop"
+			],
+			[
+				"pyer",
+				"Player"
+			],
+			[
+				"can_start",
+				"can_start_moving"
+			],
+			[
+				"canstart",
+				"can_start_moving"
+			],
+			[
+				"rul",
+				"RuleBase"
+			],
+			[
+				"setdirat",
+				"set_direction_at_collision"
+			],
+			[
+				"reverse",
+				"reverse"
+			],
+			[
+				"willd",
+				"will_die"
+			],
+			[
+				"willdi",
+				"will_die"
+			],
+			[
+				"dy",
+				"Dying"
+			],
+			[
+				"dds",
+				"Dds"
+			],
+			[
+				"alphab",
+				"alpha_blend"
+			],
+			[
+				"copy",
+				"copy_alpha_blend"
+			],
+			[
+				"mov",
+				"Move"
+			],
+			[
+				"dyn",
+				"Dying"
+			],
+			[
+				"piee",
+				"Piece"
+			],
+			[
+				"size",
+				"Size"
+			],
+			[
+				"obje",
+				"ObjectId"
+			],
+			[
+				"playr",
+				"Player"
+			],
+			[
+				"plae",
+				"Player"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
